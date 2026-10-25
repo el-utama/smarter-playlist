@@ -1,0 +1,252 @@
+{
+  "name": "Café des Artistes — Matin à Paris",
+  "main": "save",
+  "components": {
+    "comment_header": {
+      "type": "comment",
+      "params": {
+        "text": "HOTEL & CAFE 24H MASTER TEMPLATE (V2 - Extended)\n\nOptimized for maximum duration (24h) by loosening strict filters and expanding global slice.",
+        "style": "sticky",
+        "color": "yellow",
+        "size": "medium"
+      },
+      "sources": {}
+    },
+    "priority_source": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "spotify:playlist:75Tnr3Zvc0ysnUtBkNNf6n",
+        "name": "POOL Priority",
+        "user": "Devoted2",
+        "alias": "priority",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "priority_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "priority_source"
+        ]
+      }
+    },
+    "priority_ensure_all": {
+      "type": "First",
+      "params": {
+        "sample_size": 2000
+      },
+      "sources": {
+        "green": [
+          "priority_dedup"
+        ]
+      }
+    },
+    "priority_limit": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": 5
+      },
+      "sources": {
+        "green": [
+          "priority_ensure_all"
+        ]
+      }
+    },
+    "global_source": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "spotify:playlist:75Tnr3Zvc0ysnUtBkNNf6n",
+        "name": "Global Pool",
+        "user": "Devoted2",
+        "alias": "global",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "global_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "global_source"
+        ]
+      }
+    },
+    "global_slice": {
+      "type": "First",
+      "params": {
+        "sample_size": 2000
+      },
+      "sources": {
+        "green": [
+          "global_dedup"
+        ]
+      }
+    },
+    "combine": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "priority_limit",
+          "global_slice"
+        ]
+      }
+    },
+    "final_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "combine"
+        ]
+      }
+    },
+    "playable": {
+      "type": "PlayableFilter",
+      "params": {
+        "relink": true
+      },
+      "sources": {
+        "green": [
+          "final_dedup"
+        ]
+      }
+    },
+    "mos_comfort": {
+      "type": "MultiObjectiveSequencer",
+      "params": {
+        "limit": 2000,
+        "objectives": [
+          {
+            "type": "match-max-run",
+            "field": "artist",
+            "value": "",
+            "max_run": 1,
+            "separation": 2,
+            "weight": "unbreakable"
+          },
+          {
+            "type": "range",
+            "field": "energy",
+            "min_val": 0,
+            "max_val": 1,
+            "weight": "medium"
+          },
+          {
+            "type": "range",
+            "field": "valence",
+            "min_val": 0,
+            "max_val": 1,
+            "weight": "medium"
+          },
+          {
+            "type": "distribution",
+            "field": "source",
+            "values": "priority(60%) global(40%)",
+            "weight": "medium"
+          }
+        ]
+      },
+      "sources": {
+        "green": [
+          "playable"
+        ]
+      }
+    },
+    "cap_24h": {
+      "type": "ShorterThan",
+      "params": {
+        "time": 86400
+      },
+      "sources": {
+        "green": [
+          "mos_comfort"
+        ]
+      }
+    },
+    "save": {
+      "type": "PlaylistSave",
+      "params": {
+        "playlist_name": "Café des Artistes — Matin à Paris",
+        "playlist_uri": "",
+        "append": false,
+        "auto_reset": "never",
+        "reset_value": 0,
+        "no_dups": true,
+        "description": "L'essence du charme parisien. A curated blend of indie-pop and acoustic gems for a creative and inspiring morning."
+      },
+      "sources": {
+        "green": [
+          "cap_24h"
+        ]
+      }
+    }
+  },
+  "_positions": {
+    "comment_header": {
+      "x": 60,
+      "y": 40
+    },
+    "priority_source": {
+      "x": 60,
+      "y": 220
+    },
+    "priority_dedup": {
+      "x": 60,
+      "y": 380
+    },
+    "priority_ensure_all": {
+      "x": 60,
+      "y": 540
+    },
+    "priority_limit": {
+      "x": 60,
+      "y": 700
+    },
+    "global_source": {
+      "x": 560,
+      "y": 220
+    },
+    "global_dedup": {
+      "x": 560,
+      "y": 380
+    },
+    "global_slice": {
+      "x": 560,
+      "y": 540
+    },
+    "combine": {
+      "x": 320,
+      "y": 860
+    },
+    "final_dedup": {
+      "x": 320,
+      "y": 1020
+    },
+    "playable": {
+      "x": 320,
+      "y": 1180
+    },
+    "mos_comfort": {
+      "x": 320,
+      "y": 1340
+    },
+    "cap_24h": {
+      "x": 320,
+      "y": 1500
+    },
+    "save": {
+      "x": 320,
+      "y": 1660
+    }
+  }
+}

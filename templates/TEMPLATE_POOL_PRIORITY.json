@@ -1,0 +1,116 @@
+{
+  "name": "__POOL_PROGRAM_NAME__",
+  "main": "spread",
+  "components": {
+    "comment_intro": {
+      "type": "comment",
+      "params": {
+        "text": "__POOL_COMMENT__",
+        "style": "sticky",
+        "color": "yellow",
+        "size": "medium"
+      },
+      "sources": {}
+    },
+    "tracks": {
+      "type": "TrackSource",
+      "params": {
+        "uris": "spotify:playlist:75Tnr3Zvc0ysnUtBkNNf6n",
+        "name": "Priority tracks",
+        "alias": "priority",
+        "cache_mode": "no-cache"
+      },
+      "sources": {}
+    },
+    "playable": {
+      "type": "PlayableFilter",
+      "params": {
+        "relink": true
+      },
+      "sources": {
+        "green": ["tracks"]
+      }
+    },
+    "pool": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": ["playable"]
+      }
+    },
+    "dur": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "duration_ms",
+        "min_val": 60000,
+        "max_val": 600000,
+        "match": ""
+      },
+      "sources": {
+        "green": ["pool"]
+      }
+    },
+    "clean": {
+      "type": "TextFilter",
+      "params": {
+        "text": "(?i)(live at|live from|live session|live version|karaoke|cover version|sped up|slowed|reverb|instrumental version|commentary)",
+        "ignore_case": true,
+        "invert": true
+      },
+      "sources": {
+        "green": ["dur"]
+      }
+    },
+    "sort_date": {
+      "type": "Sorter",
+      "params": {
+        "attr": "release_date",
+        "reverse": true
+      },
+      "sources": {
+        "green": ["clean"]
+      }
+    },
+    "sort_pop": {
+      "type": "Sorter",
+      "params": {
+        "attr": "popularity",
+        "reverse": false
+      },
+      "sources": {
+        "green": ["sort_date"]
+      }
+    },
+    "spread": {
+      "type": "SeparateArtists",
+      "params": {},
+      "sources": {
+        "green": ["sort_pop"]
+      }
+    },
+    "comment_rules": {
+      "type": "comment",
+      "params": {
+        "text": "POOL ORDER: newest release_date first, then lowest popularity. Do not change these two Sorters; the generator relies on this order for rotation offsets. Internal pool; no need to follow.",
+        "style": "simple",
+        "color": "blue",
+        "size": "small"
+      },
+      "sources": {}
+    }
+  },
+  "_positions": {
+    "comment_intro": { "x": 60, "y": 40 },
+    "tracks": { "x": 60, "y": 220 },
+    "playable": { "x": 60, "y": 320 },
+    "pool": { "x": 60, "y": 420 },
+    "dur": { "x": 60, "y": 580 },
+    "clean": { "x": 60, "y": 740 },
+    "sort_date": { "x": 60, "y": 900 },
+    "sort_pop": { "x": 60, "y": 1060 },
+    "spread": { "x": 60, "y": 1220 },
+    "comment_rules": { "x": 420, "y": 900 }
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "name": "Midday 06 — Pop · Motivational",
+  "main": "save",
+  "components": {
+    "comment_intro": {
+      "type": "comment",
+      "params": {
+        "text": "PLAYLIST: Midday 06 — Pop · Motivational\nCategory: Midday · Genre: Pop · Mood: Motivational\nPriority offset: 1000 · Global offset: 1500\nPriority share: 60% · Global: 40%\nDo not change ShorterThan (6 hours) or match-max-run (no consecutive artist).\n\nHow to use: duplicate this program, rename it, and adjust the pool URI, offsets, and ranges. Program name = playlist name. The first run creates the playlist; later runs replace it.",
+        "style": "sticky",
+        "color": "yellow",
+        "size": "medium"
+      },
+      "sources": {}
+    },
+    "comment_priority": {
+      "type": "comment",
+      "params": {
+        "text": "PRIORITY: 26-artist pool. AllButTheFirst = rotation offset. First = candidate count. MaxTracksPerArtist = per-artist limit.",
+        "style": "simple",
+        "color": "blue",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "comment_global": {
+      "type": "comment",
+      "params": {
+        "text": "GLOBAL: genre pool. AllButTheFirst = rotation offset. First = candidate count. MaxTracksPerArtist = global per-artist limit.",
+        "style": "simple",
+        "color": "green",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "comment_rules": {
+      "type": "comment",
+      "params": {
+        "text": "IMPORTANT: ShorterThan time=21600 (6 hours). match-max-run artist max_run=1 unbreakable (no consecutive artist). distribution source priority(60%) global(40%). Do not remove or change without understanding the effect.",
+        "style": "simple",
+        "color": "pink",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "comment_run": {
+      "type": "comment",
+      "params": {
+        "text": "HOW TO RUN: Preview first to check duration and order. When satisfied, Run to save. Pools must exist and their URIs must be filled. Internal pools do not need to be followed.",
+        "style": "simple",
+        "color": "gray",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "priority_pool": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "spotify:playlist:75Tnr3Zvc0ysnUtBkNNf6n",
+        "name": "POOL Priority",
+        "user": "Devoted2",
+        "alias": "priority",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "priority_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "priority_pool"
+        ]
+      }
+    },
+    "priority_concat": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "priority_dedup",
+          "priority_dedup"
+        ]
+      }
+    },
+    "priority_rotate": {
+      "type": "AllButTheFirst",
+      "params": {
+        "sample_size": 1000
+      },
+      "sources": {
+        "green": [
+          "priority_concat"
+        ]
+      }
+    },
+    "priority_slice": {
+      "type": "First",
+      "params": {
+        "sample_size": 200
+      },
+      "sources": {
+        "green": [
+          "priority_rotate"
+        ]
+      }
+    },
+    "priority_max": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": 8
+      },
+      "sources": {
+        "green": [
+          "priority_slice"
+        ]
+      }
+    },
+    "global_pool": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "spotify:playlist:0hI7fvitIhbYCBvH8Zw8qq",
+        "name": "POOL Midday - Pop",
+        "user": "Devoted2",
+        "alias": "global",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "global_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "global_pool"
+        ]
+      }
+    },
+    "global_concat": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "global_dedup",
+          "global_dedup"
+        ]
+      }
+    },
+    "global_rotate": {
+      "type": "AllButTheFirst",
+      "params": {
+        "sample_size": 1500
+      },
+      "sources": {
+        "green": [
+          "global_concat"
+        ]
+      }
+    },
+    "global_slice": {
+      "type": "First",
+      "params": {
+        "sample_size": 300
+      },
+      "sources": {
+        "green": [
+          "global_rotate"
+        ]
+      }
+    },
+    "global_max": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": 3
+      },
+      "sources": {
+        "green": [
+          "global_slice"
+        ]
+      }
+    },
+    "combine": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "priority_max",
+          "global_max"
+        ]
+      }
+    },
+    "dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "combine"
+        ]
+      }
+    },
+    "explicit": {
+      "type": "Explicit",
+      "params": {
+        "explicit": false
+      },
+      "sources": {
+        "green": [
+          "dedup"
+        ]
+      }
+    },
+    "playable": {
+      "type": "PlayableFilter",
+      "params": {
+        "relink": true
+      },
+      "sources": {
+        "green": [
+          "explicit"
+        ]
+      }
+    },
+    "mos": {
+      "type": "MultiObjectiveSequencer",
+      "params": {
+        "limit": 120,
+        "objectives": [
+          {
+            "type": "match-max-run",
+            "field": "artist",
+            "value": "",
+            "max_run": 1,
+            "separation": 2,
+            "weight": "unbreakable"
+          },
+          {
+            "type": "min-separation",
+            "field": "artist",
+            "separation": 2,
+            "weight": "high"
+          },
+          {
+            "type": "distribution",
+            "field": "source",
+            "values": "priority(60%) global(40%)",
+            "weight": "high"
+          },
+          {
+            "type": "match",
+            "field": "artist",
+            "value": "eL Utama",
+            "weight": "high"
+          },
+          {
+            "type": "minimize",
+            "field": "popularity",
+            "weight": "highest"
+          },
+          {
+            "type": "maximize",
+            "field": "release_year",
+            "weight": "high"
+          },
+          {
+            "type": "max-match",
+            "field": "artist",
+            "max_count": 8,
+            "weight": "medium"
+          },
+          {
+            "type": "contains",
+            "field": "mb_genres",
+            "value": "pop",
+            "weight": "medium"
+          },
+          {
+            "type": "range",
+            "field": "energy",
+            "min_val": 0.6,
+            "max_val": 1.0,
+            "weight": "medium"
+          },
+          {
+            "type": "range",
+            "field": "valence",
+            "min_val": 0.45,
+            "max_val": 1.0,
+            "weight": "medium"
+          },
+          {
+            "type": "range",
+            "field": "tempo",
+            "min_val": 95,
+            "max_val": 155,
+            "weight": "low"
+          },
+          {
+            "type": "range",
+            "field": "danceability",
+            "min_val": 0.5,
+            "max_val": 1.0,
+            "weight": "low"
+          },
+          {
+            "type": "range",
+            "field": "acousticness",
+            "min_val": 0.0,
+            "max_val": 0.4,
+            "weight": "low"
+          },
+          {
+            "type": "variety",
+            "field": "mb_genres",
+            "weight": "low"
+          }
+        ]
+      },
+      "sources": {
+        "green": [
+          "playable"
+        ]
+      }
+    },
+    "cap": {
+      "type": "ShorterThan",
+      "params": {
+        "time": 21600
+      },
+      "sources": {
+        "green": [
+          "mos"
+        ]
+      }
+    },
+    "save": {
+      "type": "PlaylistSave",
+      "params": {
+        "playlist_name": "Midday 06 — Pop · Motivational",
+        "playlist_uri": "",
+        "append": false,
+        "auto_reset": "never",
+        "reset_value": 0,
+        "no_dups": true,
+        "description": "Power through midday with a motivational pop mix. Artist-first picks and new discoveries, sequenced for a smooth flow. Refreshed regularly. ${NUM_TRACKS} tracks · ${DURATION}."
+      },
+      "sources": {
+        "green": [
+          "cap"
+        ]
+      }
+    }
+  },
+  "_positions": {
+    "comment_intro": {
+      "x": 60,
+      "y": 40
+    },
+    "comment_priority": {
+      "x": 60,
+      "y": 150
+    },
+    "comment_global": {
+      "x": 560,
+      "y": 150
+    },
+    "priority_pool": {
+      "x": 60,
+      "y": 300
+    },
+    "priority_dedup": {
+      "x": 60,
+      "y": 480
+    },
+    "priority_concat": {
+      "x": 60,
+      "y": 620
+    },
+    "priority_rotate": {
+      "x": 60,
+      "y": 760
+    },
+    "priority_slice": {
+      "x": 60,
+      "y": 900
+    },
+    "priority_max": {
+      "x": 60,
+      "y": 1040
+    },
+    "global_pool": {
+      "x": 560,
+      "y": 300
+    },
+    "global_dedup": {
+      "x": 560,
+      "y": 480
+    },
+    "global_concat": {
+      "x": 560,
+      "y": 620
+    },
+    "global_rotate": {
+      "x": 560,
+      "y": 760
+    },
+    "global_slice": {
+      "x": 560,
+      "y": 900
+    },
+    "global_max": {
+      "x": 560,
+      "y": 1040
+    },
+    "combine": {
+      "x": 320,
+      "y": 1200
+    },
+    "dedup": {
+      "x": 320,
+      "y": 1340
+    },
+    "explicit": {
+      "x": 320,
+      "y": 1480
+    },
+    "playable": {
+      "x": 320,
+      "y": 1620
+    },
+    "mos": {
+      "x": 320,
+      "y": 1760
+    },
+    "cap": {
+      "x": 320,
+      "y": 2200
+    },
+    "save": {
+      "x": 320,
+      "y": 2340
+    },
+    "comment_rules": {
+      "x": 860,
+      "y": 1340
+    },
+    "comment_run": {
+      "x": 860,
+      "y": 1620
+    }
+  },
+  "tags": [
+    "generator",
+    "midday",
+    "motivational",
+    "playable-verified"
+  ]
+}

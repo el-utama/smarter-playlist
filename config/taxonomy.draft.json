@@ -1,0 +1,293 @@
+{
+  "_note": "APPROVED taxonomy (2026-10-24). Matriks: 4 kategori x 5 genre x 6 mood = 120 playlist. Judul playlist dan deskripsi memakai bahasa Inggris. Edit file ini lalu jalankan tools/build_config.py untuk regenerate config.",
+  "version": 1,
+  "categories": {
+    "pagi": {
+      "label": "Morning",
+      "prefix": "Morning",
+      "pool_program_prefix": "POOL Morning",
+      "explicit_mode": "clean",
+      "base_ranges": {
+        "energy": [0.1, 0.55],
+        "valence": [0.3, 0.9],
+        "tempo": [55, 125],
+        "danceability": [0.15, 0.65],
+        "acousticness": [0.15, 0.95]
+      },
+      "genres": [
+        {
+          "name": "Acoustic & Folk",
+          "filter": "folk",
+          "tags": ["acoustic", "folk", "singer-songwriter"],
+          "descriptions": ["morning acoustic folk", "warm acoustic folk"]
+        },
+        {
+          "name": "Indie Pop",
+          "filter": "indie pop",
+          "tags": ["indie pop", "bedroom pop", "dream pop"],
+          "descriptions": ["fresh indie pop", "morning indie pop"]
+        },
+        {
+          "name": "Jazz & Soul",
+          "filter": "jazz",
+          "tags": ["jazz", "soul", "neo-soul"],
+          "descriptions": ["morning jazz soul", "warm jazz soul"]
+        },
+        {
+          "name": "Classical & Piano",
+          "filter": "classical",
+          "tags": ["classical", "piano", "instrumental"],
+          "descriptions": ["morning classical piano", "gentle classical piano"]
+        },
+        {
+          "name": "Lo-Fi & Chillhop",
+          "filter": "",
+          "artist_genre": "lo-fi",
+          "tags": ["lo-fi", "chillhop", "downtempo"],
+          "descriptions": ["morning lo-fi chillhop", "focused lo-fi chillhop"]
+        }
+      ],
+      "moods": [
+        {
+          "name": "Fresh",
+          "modifiers": { "energy": 0.05, "valence": 0.1, "tempo": 5, "danceability": 0.05, "acousticness": -0.05 }
+        },
+        {
+          "name": "Calm",
+          "modifiers": { "energy": -0.1, "valence": 0.0, "tempo": -10, "danceability": -0.05, "acousticness": 0.1 }
+        },
+        {
+          "name": "Hopeful",
+          "modifiers": { "energy": 0.0, "valence": 0.15, "tempo": 0, "danceability": 0.0, "acousticness": 0.0 }
+        },
+        {
+          "name": "Warm",
+          "modifiers": { "energy": 0.0, "valence": 0.1, "tempo": 0, "danceability": 0.0, "acousticness": 0.1 }
+        },
+        {
+          "name": "Focused",
+          "modifiers": { "energy": -0.05, "valence": 0.0, "tempo": 0, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Gentle",
+          "modifiers": { "energy": -0.1, "valence": 0.05, "tempo": -5, "danceability": -0.05, "acousticness": 0.1 }
+        }
+      ]
+    },
+    "siang": {
+      "label": "Midday",
+      "prefix": "Midday",
+      "pool_program_prefix": "POOL Midday",
+      "explicit_mode": "clean",
+      "base_ranges": {
+        "energy": [0.5, 0.95],
+        "valence": [0.4, 0.95],
+        "tempo": [90, 150],
+        "danceability": [0.45, 0.95],
+        "acousticness": [0.0, 0.45]
+      },
+      "genres": [
+        {
+          "name": "Pop",
+          "filter": "pop",
+          "tags": ["pop", "dance pop", "electropop"],
+          "descriptions": ["upbeat pop", "bright pop"]
+        },
+        {
+          "name": "Dance & Electronic",
+          "filter": "electronic",
+          "tags": ["house", "edm", "disco"],
+          "descriptions": ["energetic dance electronic", "upbeat house"]
+        },
+        {
+          "name": "Hip-Hop & R&B",
+          "filter": "hip hop",
+          "tags": ["hip-hop", "rap", "r&b"],
+          "descriptions": ["confident hip hop r&b", "groovy hip hop"]
+        },
+        {
+          "name": "Rock & Alternative",
+          "filter": "rock",
+          "tags": ["rock", "alternative rock", "indie rock"],
+          "descriptions": ["energetic rock alternative", "bright rock"]
+        },
+        {
+          "name": "Funk & Groove",
+          "filter": "funk",
+          "tags": ["funk", "disco", "boogie"],
+          "descriptions": ["groovy funk", "upbeat disco funk"]
+        }
+      ],
+      "moods": [
+        {
+          "name": "Upbeat",
+          "modifiers": { "energy": 0.1, "valence": 0.1, "tempo": 5, "danceability": 0.05, "acousticness": -0.05 }
+        },
+        {
+          "name": "Energetic",
+          "modifiers": { "energy": 0.15, "valence": 0.05, "tempo": 10, "danceability": 0.1, "acousticness": -0.1 }
+        },
+        {
+          "name": "Confident",
+          "modifiers": { "energy": 0.05, "valence": 0.05, "tempo": 0, "danceability": 0.05, "acousticness": -0.05 }
+        },
+        {
+          "name": "Bright",
+          "modifiers": { "energy": 0.05, "valence": 0.15, "tempo": 0, "danceability": 0.05, "acousticness": -0.05 }
+        },
+        {
+          "name": "Groovy",
+          "modifiers": { "energy": 0.05, "valence": 0.05, "tempo": 0, "danceability": 0.15, "acousticness": -0.05 }
+        },
+        {
+          "name": "Motivational",
+          "modifiers": { "energy": 0.1, "valence": 0.05, "tempo": 5, "danceability": 0.05, "acousticness": -0.05 }
+        }
+      ]
+    },
+    "sore": {
+      "label": "Afternoon",
+      "prefix": "Afternoon",
+      "pool_program_prefix": "POOL Afternoon",
+      "explicit_mode": "allow",
+      "base_ranges": {
+        "energy": [0.2, 0.65],
+        "valence": [0.2, 0.8],
+        "tempo": [65, 125],
+        "danceability": [0.25, 0.75],
+        "acousticness": [0.15, 0.85]
+      },
+      "genres": [
+        {
+          "name": "Indie & Alternative",
+          "filter": "indie",
+          "tags": ["indie", "alternative", "shoegaze"],
+          "descriptions": ["mellow indie alternative", "sunset indie"]
+        },
+        {
+          "name": "Soul & R&B",
+          "filter": "soul",
+          "tags": ["soul", "r&b", "neo-soul"],
+          "descriptions": ["romantic soul r&b", "relaxed soul"]
+        },
+        {
+          "name": "Jazz & Blues",
+          "filter": "jazz",
+          "tags": ["jazz", "blues", "lounge"],
+          "descriptions": ["relaxed jazz blues", "sunset jazz lounge"]
+        },
+        {
+          "name": "Chillout & Downtempo",
+          "filter": "downtempo",
+          "tags": ["chillout", "downtempo", "trip-hop"],
+          "descriptions": ["relaxed chillout downtempo", "sunset chillout"]
+        },
+        {
+          "name": "Singer-Songwriter",
+          "filter": "singer-songwriter",
+          "tags": ["singer-songwriter", "acoustic", "folk"],
+          "descriptions": ["reflective singer-songwriter", "mellow acoustic"]
+        }
+      ],
+      "moods": [
+        {
+          "name": "Mellow",
+          "modifiers": { "energy": -0.1, "valence": 0.0, "tempo": -5, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Romantic",
+          "modifiers": { "energy": -0.05, "valence": 0.05, "tempo": 0, "danceability": 0.0, "acousticness": 0.1 }
+        },
+        {
+          "name": "Nostalgic",
+          "modifiers": { "energy": -0.05, "valence": -0.05, "tempo": -5, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Relaxed",
+          "modifiers": { "energy": -0.1, "valence": 0.05, "tempo": -5, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Golden",
+          "modifiers": { "energy": 0.0, "valence": 0.1, "tempo": 0, "danceability": 0.0, "acousticness": 0.05 }
+        },
+        {
+          "name": "Reflective",
+          "modifiers": { "energy": -0.1, "valence": -0.1, "tempo": -5, "danceability": -0.05, "acousticness": 0.1 }
+        }
+      ]
+    },
+    "malam": {
+      "label": "Night",
+      "prefix": "Night",
+      "pool_program_prefix": "POOL Night",
+      "explicit_mode": "allow",
+      "base_ranges": {
+        "energy": [0.05, 0.45],
+        "valence": [0.05, 0.6],
+        "tempo": [45, 115],
+        "danceability": [0.05, 0.55],
+        "acousticness": [0.25, 0.98]
+      },
+      "genres": [
+        {
+          "name": "Ambient & Electronic",
+          "filter": "ambient",
+          "tags": ["ambient", "drone", "electronic"],
+          "descriptions": ["sleepy ambient electronic", "cinematic ambient"]
+        },
+        {
+          "name": "Lo-Fi & Chillhop",
+          "filter": "",
+          "artist_genre": "lo-fi",
+          "tags": ["lo-fi", "chillhop", "jazzhop"],
+          "descriptions": ["sleepy lo-fi chillhop", "dreamy lo-fi"]
+        },
+        {
+          "name": "Piano & Classical",
+          "filter": "classical",
+          "tags": ["piano", "classical", "neoclassical"],
+          "descriptions": ["intimate piano classical", "cinematic piano"]
+        },
+        {
+          "name": "Dream Pop & Shoegaze",
+          "filter": "",
+          "artist_genre": "dream pop",
+          "tags": ["dream pop", "shoegaze", "ethereal"],
+          "descriptions": ["dreamy dream pop shoegaze", "nocturnal dream pop"]
+        },
+        {
+          "name": "R&B & Soul",
+          "filter": "soul",
+          "tags": ["r&b", "soul", "quiet storm"],
+          "descriptions": ["intimate r&b soul", "nocturnal r&b"]
+        }
+      ],
+      "moods": [
+        {
+          "name": "Sleepy",
+          "modifiers": { "energy": -0.15, "valence": -0.05, "tempo": -15, "danceability": -0.1, "acousticness": 0.1 }
+        },
+        {
+          "name": "Dreamy",
+          "modifiers": { "energy": -0.05, "valence": 0.0, "tempo": -5, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Melancholic",
+          "modifiers": { "energy": -0.05, "valence": -0.2, "tempo": -5, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Intimate",
+          "modifiers": { "energy": -0.05, "valence": 0.0, "tempo": -5, "danceability": -0.05, "acousticness": 0.1 }
+        },
+        {
+          "name": "Cinematic",
+          "modifiers": { "energy": 0.05, "valence": -0.05, "tempo": 0, "danceability": -0.05, "acousticness": 0.05 }
+        },
+        {
+          "name": "Nocturnal",
+          "modifiers": { "energy": 0.0, "valence": -0.05, "tempo": 0, "danceability": 0.0, "acousticness": 0.0 }
+        }
+      ]
+    }
+  }
+}

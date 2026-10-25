@@ -1,0 +1,1357 @@
+{
+  "generated_at": "2026-10-25T06:21:32.440217+00:00",
+  "mode": "all",
+  "note": "Generated locally. No SmarterPlaylists program or Spotify playlist was created.",
+  "pools": [
+    {
+      "program_name": "POOL Priority",
+      "type": "priority",
+      "file": "programs\\pools\\pool_priority.json",
+      "pool_playlist_uri": "spotify:playlist:75Tnr3Zvc0ysnUtBkNNf6n",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Morning - Acoustic & Folk",
+      "type": "genre",
+      "file": "programs\\pools\\pool_morning_acoustic_folk.json",
+      "pool_playlist_uri": "spotify:playlist:11aeoMHfXGsXPwqkbEDrJD",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Morning - Indie Pop",
+      "type": "genre",
+      "file": "programs\\pools\\pool_morning_indie_pop.json",
+      "pool_playlist_uri": "spotify:playlist:3wnYDdevrQTJCatHGzjIeS",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Morning - Jazz & Soul",
+      "type": "genre",
+      "file": "programs\\pools\\pool_morning_jazz_soul.json",
+      "pool_playlist_uri": "spotify:playlist:7hGIuuGLyRKrL5JLtM3suk",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Morning - Classical & Piano",
+      "type": "genre",
+      "file": "programs\\pools\\pool_morning_classical_piano.json",
+      "pool_playlist_uri": "spotify:playlist:7gL4LHvtguPY3vw0PjRMfj",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Morning - Lo-Fi & Chillhop",
+      "type": "genre",
+      "file": "programs\\pools\\pool_morning_lo_fi_chillhop.json",
+      "pool_playlist_uri": "spotify:playlist:5eUUsq86c350oe4oH1IGJj",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Midday - Pop",
+      "type": "genre",
+      "file": "programs\\pools\\pool_midday_pop.json",
+      "pool_playlist_uri": "spotify:playlist:0hI7fvitIhbYCBvH8Zw8qq",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Midday - Dance & Electronic",
+      "type": "genre",
+      "file": "programs\\pools\\pool_midday_dance_electronic.json",
+      "pool_playlist_uri": "spotify:playlist:0zxVRKGC5wlQqIFs3YT4q2",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Midday - Hip-Hop & R&B",
+      "type": "genre",
+      "file": "programs\\pools\\pool_midday_hip_hop_r_b.json",
+      "pool_playlist_uri": "spotify:playlist:4yQLDZvJn0Jybvx8Fw6c1s",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Midday - Rock & Alternative",
+      "type": "genre",
+      "file": "programs\\pools\\pool_midday_rock_alternative.json",
+      "pool_playlist_uri": "spotify:playlist:0QJGGsi67PbTK4ys0ie1G3",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Midday - Funk & Groove",
+      "type": "genre",
+      "file": "programs\\pools\\pool_midday_funk_groove.json",
+      "pool_playlist_uri": "spotify:playlist:3FN1Dzh4WeKue7lQVomQpb",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Afternoon - Indie & Alternative",
+      "type": "genre",
+      "file": "programs\\pools\\pool_afternoon_indie_alternative.json",
+      "pool_playlist_uri": "spotify:playlist:17DueaKwSLbMlV3H1gjp5H",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Afternoon - Soul & R&B",
+      "type": "genre",
+      "file": "programs\\pools\\pool_afternoon_soul_r_b.json",
+      "pool_playlist_uri": "spotify:playlist:7qfKoFt5S0cXYzmPpiE9ty",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Afternoon - Jazz & Blues",
+      "type": "genre",
+      "file": "programs\\pools\\pool_afternoon_jazz_blues.json",
+      "pool_playlist_uri": "spotify:playlist:3jWSWqeuOICycB5eUaV234",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Afternoon - Chillout & Downtempo",
+      "type": "genre",
+      "file": "programs\\pools\\pool_afternoon_chillout_downtempo.json",
+      "pool_playlist_uri": "spotify:playlist:6yt7xlxRcpuavjb6qWYEb1",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Afternoon - Singer-Songwriter",
+      "type": "genre",
+      "file": "programs\\pools\\pool_afternoon_singer_songwriter.json",
+      "pool_playlist_uri": "spotify:playlist:4fn1jCiQbaufmiEvmhfK1A",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Night - Ambient & Electronic",
+      "type": "genre",
+      "file": "programs\\pools\\pool_night_ambient_electronic.json",
+      "pool_playlist_uri": "spotify:playlist:7CIK6jHI3P3E1nzNGrVc5a",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Night - Lo-Fi & Chillhop",
+      "type": "genre",
+      "file": "programs\\pools\\pool_night_lo_fi_chillhop.json",
+      "pool_playlist_uri": "spotify:playlist:2vCHYvkKDJZHb3sNNeDXXP",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Night - Piano & Classical",
+      "type": "genre",
+      "file": "programs\\pools\\pool_night_piano_classical.json",
+      "pool_playlist_uri": "spotify:playlist:5MCds8de8Lx0dl8HiL8CkV",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Night - Dream Pop & Shoegaze",
+      "type": "genre",
+      "file": "programs\\pools\\pool_night_dream_pop_shoegaze.json",
+      "pool_playlist_uri": "spotify:playlist:6dAaYGMaYo6BNfUoqj3yw4",
+      "warnings": []
+    },
+    {
+      "program_name": "POOL Night - R&B & Soul",
+      "type": "genre",
+      "file": "programs\\pools\\pool_night_r_b_soul.json",
+      "pool_playlist_uri": "spotify:playlist:0z5CCHyzuhzFIeAAtPRIsk",
+      "warnings": []
+    }
+  ],
+  "generators": [
+    {
+      "playlist_name": "Morning 01 — Acoustic & Folk · Fresh",
+      "category": "pagi",
+      "genre": "Acoustic & Folk",
+      "mood": "Fresh",
+      "file": "programs\\generated\\morning_01_acoustic_folk_fresh.json",
+      "priority_offset": 0,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 02 — Acoustic & Folk · Calm",
+      "category": "pagi",
+      "genre": "Acoustic & Folk",
+      "mood": "Calm",
+      "file": "programs\\generated\\morning_02_acoustic_folk_calm.json",
+      "priority_offset": 200,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 03 — Acoustic & Folk · Hopeful",
+      "category": "pagi",
+      "genre": "Acoustic & Folk",
+      "mood": "Hopeful",
+      "file": "programs\\generated\\morning_03_acoustic_folk_hopeful.json",
+      "priority_offset": 400,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 04 — Acoustic & Folk · Warm",
+      "category": "pagi",
+      "genre": "Acoustic & Folk",
+      "mood": "Warm",
+      "file": "programs\\generated\\morning_04_acoustic_folk_warm.json",
+      "priority_offset": 600,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 05 — Acoustic & Folk · Focused",
+      "category": "pagi",
+      "genre": "Acoustic & Folk",
+      "mood": "Focused",
+      "file": "programs\\generated\\morning_05_acoustic_folk_focused.json",
+      "priority_offset": 800,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 06 — Acoustic & Folk · Gentle",
+      "category": "pagi",
+      "genre": "Acoustic & Folk",
+      "mood": "Gentle",
+      "file": "programs\\generated\\morning_06_acoustic_folk_gentle.json",
+      "priority_offset": 1000,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 07 — Indie Pop · Fresh",
+      "category": "pagi",
+      "genre": "Indie Pop",
+      "mood": "Fresh",
+      "file": "programs\\generated\\morning_07_indie_pop_fresh.json",
+      "priority_offset": 1200,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 08 — Indie Pop · Calm",
+      "category": "pagi",
+      "genre": "Indie Pop",
+      "mood": "Calm",
+      "file": "programs\\generated\\morning_08_indie_pop_calm.json",
+      "priority_offset": 17,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 09 — Indie Pop · Hopeful",
+      "category": "pagi",
+      "genre": "Indie Pop",
+      "mood": "Hopeful",
+      "file": "programs\\generated\\morning_09_indie_pop_hopeful.json",
+      "priority_offset": 217,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 10 — Indie Pop · Warm",
+      "category": "pagi",
+      "genre": "Indie Pop",
+      "mood": "Warm",
+      "file": "programs\\generated\\morning_10_indie_pop_warm.json",
+      "priority_offset": 417,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 11 — Indie Pop · Focused",
+      "category": "pagi",
+      "genre": "Indie Pop",
+      "mood": "Focused",
+      "file": "programs\\generated\\morning_11_indie_pop_focused.json",
+      "priority_offset": 617,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 12 — Indie Pop · Gentle",
+      "category": "pagi",
+      "genre": "Indie Pop",
+      "mood": "Gentle",
+      "file": "programs\\generated\\morning_12_indie_pop_gentle.json",
+      "priority_offset": 817,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 13 — Jazz & Soul · Fresh",
+      "category": "pagi",
+      "genre": "Jazz & Soul",
+      "mood": "Fresh",
+      "file": "programs\\generated\\morning_13_jazz_soul_fresh.json",
+      "priority_offset": 1017,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 14 — Jazz & Soul · Calm",
+      "category": "pagi",
+      "genre": "Jazz & Soul",
+      "mood": "Calm",
+      "file": "programs\\generated\\morning_14_jazz_soul_calm.json",
+      "priority_offset": 1217,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 15 — Jazz & Soul · Hopeful",
+      "category": "pagi",
+      "genre": "Jazz & Soul",
+      "mood": "Hopeful",
+      "file": "programs\\generated\\morning_15_jazz_soul_hopeful.json",
+      "priority_offset": 34,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 16 — Jazz & Soul · Warm",
+      "category": "pagi",
+      "genre": "Jazz & Soul",
+      "mood": "Warm",
+      "file": "programs\\generated\\morning_16_jazz_soul_warm.json",
+      "priority_offset": 234,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 17 — Jazz & Soul · Focused",
+      "category": "pagi",
+      "genre": "Jazz & Soul",
+      "mood": "Focused",
+      "file": "programs\\generated\\morning_17_jazz_soul_focused.json",
+      "priority_offset": 434,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 18 — Jazz & Soul · Gentle",
+      "category": "pagi",
+      "genre": "Jazz & Soul",
+      "mood": "Gentle",
+      "file": "programs\\generated\\morning_18_jazz_soul_gentle.json",
+      "priority_offset": 634,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 19 — Classical & Piano · Fresh",
+      "category": "pagi",
+      "genre": "Classical & Piano",
+      "mood": "Fresh",
+      "file": "programs\\generated\\morning_19_classical_piano_fresh.json",
+      "priority_offset": 834,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 20 — Classical & Piano · Calm",
+      "category": "pagi",
+      "genre": "Classical & Piano",
+      "mood": "Calm",
+      "file": "programs\\generated\\morning_20_classical_piano_calm.json",
+      "priority_offset": 1034,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 21 — Classical & Piano · Hopeful",
+      "category": "pagi",
+      "genre": "Classical & Piano",
+      "mood": "Hopeful",
+      "file": "programs\\generated\\morning_21_classical_piano_hopeful.json",
+      "priority_offset": 1234,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 22 — Classical & Piano · Warm",
+      "category": "pagi",
+      "genre": "Classical & Piano",
+      "mood": "Warm",
+      "file": "programs\\generated\\morning_22_classical_piano_warm.json",
+      "priority_offset": 51,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 23 — Classical & Piano · Focused",
+      "category": "pagi",
+      "genre": "Classical & Piano",
+      "mood": "Focused",
+      "file": "programs\\generated\\morning_23_classical_piano_focused.json",
+      "priority_offset": 251,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 24 — Classical & Piano · Gentle",
+      "category": "pagi",
+      "genre": "Classical & Piano",
+      "mood": "Gentle",
+      "file": "programs\\generated\\morning_24_classical_piano_gentle.json",
+      "priority_offset": 451,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 25 — Lo-Fi & Chillhop · Fresh",
+      "category": "pagi",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Fresh",
+      "file": "programs\\generated\\morning_25_lo_fi_chillhop_fresh.json",
+      "priority_offset": 651,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 26 — Lo-Fi & Chillhop · Calm",
+      "category": "pagi",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Calm",
+      "file": "programs\\generated\\morning_26_lo_fi_chillhop_calm.json",
+      "priority_offset": 851,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 27 — Lo-Fi & Chillhop · Hopeful",
+      "category": "pagi",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Hopeful",
+      "file": "programs\\generated\\morning_27_lo_fi_chillhop_hopeful.json",
+      "priority_offset": 1051,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 28 — Lo-Fi & Chillhop · Warm",
+      "category": "pagi",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Warm",
+      "file": "programs\\generated\\morning_28_lo_fi_chillhop_warm.json",
+      "priority_offset": 1251,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 29 — Lo-Fi & Chillhop · Focused",
+      "category": "pagi",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Focused",
+      "file": "programs\\generated\\morning_29_lo_fi_chillhop_focused.json",
+      "priority_offset": 68,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Morning 30 — Lo-Fi & Chillhop · Gentle",
+      "category": "pagi",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Gentle",
+      "file": "programs\\generated\\morning_30_lo_fi_chillhop_gentle.json",
+      "priority_offset": 268,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 01 — Pop · Upbeat",
+      "category": "siang",
+      "genre": "Pop",
+      "mood": "Upbeat",
+      "file": "programs\\generated\\midday_01_pop_upbeat.json",
+      "priority_offset": 0,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 02 — Pop · Energetic",
+      "category": "siang",
+      "genre": "Pop",
+      "mood": "Energetic",
+      "file": "programs\\generated\\midday_02_pop_energetic.json",
+      "priority_offset": 200,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 03 — Pop · Confident",
+      "category": "siang",
+      "genre": "Pop",
+      "mood": "Confident",
+      "file": "programs\\generated\\midday_03_pop_confident.json",
+      "priority_offset": 400,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 04 — Pop · Bright",
+      "category": "siang",
+      "genre": "Pop",
+      "mood": "Bright",
+      "file": "programs\\generated\\midday_04_pop_bright.json",
+      "priority_offset": 600,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 05 — Pop · Groovy",
+      "category": "siang",
+      "genre": "Pop",
+      "mood": "Groovy",
+      "file": "programs\\generated\\midday_05_pop_groovy.json",
+      "priority_offset": 800,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 06 — Pop · Motivational",
+      "category": "siang",
+      "genre": "Pop",
+      "mood": "Motivational",
+      "file": "programs\\generated\\midday_06_pop_motivational.json",
+      "priority_offset": 1000,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 07 — Dance & Electronic · Upbeat",
+      "category": "siang",
+      "genre": "Dance & Electronic",
+      "mood": "Upbeat",
+      "file": "programs\\generated\\midday_07_dance_electronic_upbeat.json",
+      "priority_offset": 1200,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 08 — Dance & Electronic · Energetic",
+      "category": "siang",
+      "genre": "Dance & Electronic",
+      "mood": "Energetic",
+      "file": "programs\\generated\\midday_08_dance_electronic_energetic.json",
+      "priority_offset": 17,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 09 — Dance & Electronic · Confident",
+      "category": "siang",
+      "genre": "Dance & Electronic",
+      "mood": "Confident",
+      "file": "programs\\generated\\midday_09_dance_electronic_confident.json",
+      "priority_offset": 217,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 10 — Dance & Electronic · Bright",
+      "category": "siang",
+      "genre": "Dance & Electronic",
+      "mood": "Bright",
+      "file": "programs\\generated\\midday_10_dance_electronic_bright.json",
+      "priority_offset": 417,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 11 — Dance & Electronic · Groovy",
+      "category": "siang",
+      "genre": "Dance & Electronic",
+      "mood": "Groovy",
+      "file": "programs\\generated\\midday_11_dance_electronic_groovy.json",
+      "priority_offset": 617,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 12 — Dance & Electronic · Motivational",
+      "category": "siang",
+      "genre": "Dance & Electronic",
+      "mood": "Motivational",
+      "file": "programs\\generated\\midday_12_dance_electronic_motivational.json",
+      "priority_offset": 817,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 13 — Hip-Hop & R&B · Upbeat",
+      "category": "siang",
+      "genre": "Hip-Hop & R&B",
+      "mood": "Upbeat",
+      "file": "programs\\generated\\midday_13_hip_hop_r_b_upbeat.json",
+      "priority_offset": 1017,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 14 — Hip-Hop & R&B · Energetic",
+      "category": "siang",
+      "genre": "Hip-Hop & R&B",
+      "mood": "Energetic",
+      "file": "programs\\generated\\midday_14_hip_hop_r_b_energetic.json",
+      "priority_offset": 1217,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 15 — Hip-Hop & R&B · Confident",
+      "category": "siang",
+      "genre": "Hip-Hop & R&B",
+      "mood": "Confident",
+      "file": "programs\\generated\\midday_15_hip_hop_r_b_confident.json",
+      "priority_offset": 34,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 16 — Hip-Hop & R&B · Bright",
+      "category": "siang",
+      "genre": "Hip-Hop & R&B",
+      "mood": "Bright",
+      "file": "programs\\generated\\midday_16_hip_hop_r_b_bright.json",
+      "priority_offset": 234,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 17 — Hip-Hop & R&B · Groovy",
+      "category": "siang",
+      "genre": "Hip-Hop & R&B",
+      "mood": "Groovy",
+      "file": "programs\\generated\\midday_17_hip_hop_r_b_groovy.json",
+      "priority_offset": 434,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 18 — Hip-Hop & R&B · Motivational",
+      "category": "siang",
+      "genre": "Hip-Hop & R&B",
+      "mood": "Motivational",
+      "file": "programs\\generated\\midday_18_hip_hop_r_b_motivational.json",
+      "priority_offset": 634,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 19 — Rock & Alternative · Upbeat",
+      "category": "siang",
+      "genre": "Rock & Alternative",
+      "mood": "Upbeat",
+      "file": "programs\\generated\\midday_19_rock_alternative_upbeat.json",
+      "priority_offset": 834,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 20 — Rock & Alternative · Energetic",
+      "category": "siang",
+      "genre": "Rock & Alternative",
+      "mood": "Energetic",
+      "file": "programs\\generated\\midday_20_rock_alternative_energetic.json",
+      "priority_offset": 1034,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 21 — Rock & Alternative · Confident",
+      "category": "siang",
+      "genre": "Rock & Alternative",
+      "mood": "Confident",
+      "file": "programs\\generated\\midday_21_rock_alternative_confident.json",
+      "priority_offset": 1234,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 22 — Rock & Alternative · Bright",
+      "category": "siang",
+      "genre": "Rock & Alternative",
+      "mood": "Bright",
+      "file": "programs\\generated\\midday_22_rock_alternative_bright.json",
+      "priority_offset": 51,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 23 — Rock & Alternative · Groovy",
+      "category": "siang",
+      "genre": "Rock & Alternative",
+      "mood": "Groovy",
+      "file": "programs\\generated\\midday_23_rock_alternative_groovy.json",
+      "priority_offset": 251,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 24 — Rock & Alternative · Motivational",
+      "category": "siang",
+      "genre": "Rock & Alternative",
+      "mood": "Motivational",
+      "file": "programs\\generated\\midday_24_rock_alternative_motivational.json",
+      "priority_offset": 451,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 25 — Funk & Groove · Upbeat",
+      "category": "siang",
+      "genre": "Funk & Groove",
+      "mood": "Upbeat",
+      "file": "programs\\generated\\midday_25_funk_groove_upbeat.json",
+      "priority_offset": 651,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 26 — Funk & Groove · Energetic",
+      "category": "siang",
+      "genre": "Funk & Groove",
+      "mood": "Energetic",
+      "file": "programs\\generated\\midday_26_funk_groove_energetic.json",
+      "priority_offset": 851,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 27 — Funk & Groove · Confident",
+      "category": "siang",
+      "genre": "Funk & Groove",
+      "mood": "Confident",
+      "file": "programs\\generated\\midday_27_funk_groove_confident.json",
+      "priority_offset": 1051,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 28 — Funk & Groove · Bright",
+      "category": "siang",
+      "genre": "Funk & Groove",
+      "mood": "Bright",
+      "file": "programs\\generated\\midday_28_funk_groove_bright.json",
+      "priority_offset": 1251,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 29 — Funk & Groove · Groovy",
+      "category": "siang",
+      "genre": "Funk & Groove",
+      "mood": "Groovy",
+      "file": "programs\\generated\\midday_29_funk_groove_groovy.json",
+      "priority_offset": 68,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Midday 30 — Funk & Groove · Motivational",
+      "category": "siang",
+      "genre": "Funk & Groove",
+      "mood": "Motivational",
+      "file": "programs\\generated\\midday_30_funk_groove_motivational.json",
+      "priority_offset": 268,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 01 — Indie & Alternative · Mellow",
+      "category": "sore",
+      "genre": "Indie & Alternative",
+      "mood": "Mellow",
+      "file": "programs\\generated\\afternoon_01_indie_alternative_mellow.json",
+      "priority_offset": 0,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 02 — Indie & Alternative · Romantic",
+      "category": "sore",
+      "genre": "Indie & Alternative",
+      "mood": "Romantic",
+      "file": "programs\\generated\\afternoon_02_indie_alternative_romantic.json",
+      "priority_offset": 200,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 03 — Indie & Alternative · Nostalgic",
+      "category": "sore",
+      "genre": "Indie & Alternative",
+      "mood": "Nostalgic",
+      "file": "programs\\generated\\afternoon_03_indie_alternative_nostalgic.json",
+      "priority_offset": 400,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 04 — Indie & Alternative · Relaxed",
+      "category": "sore",
+      "genre": "Indie & Alternative",
+      "mood": "Relaxed",
+      "file": "programs\\generated\\afternoon_04_indie_alternative_relaxed.json",
+      "priority_offset": 600,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 05 — Indie & Alternative · Golden",
+      "category": "sore",
+      "genre": "Indie & Alternative",
+      "mood": "Golden",
+      "file": "programs\\generated\\afternoon_05_indie_alternative_golden.json",
+      "priority_offset": 800,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 06 — Indie & Alternative · Reflective",
+      "category": "sore",
+      "genre": "Indie & Alternative",
+      "mood": "Reflective",
+      "file": "programs\\generated\\afternoon_06_indie_alternative_reflective.json",
+      "priority_offset": 1000,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 07 — Soul & R&B · Mellow",
+      "category": "sore",
+      "genre": "Soul & R&B",
+      "mood": "Mellow",
+      "file": "programs\\generated\\afternoon_07_soul_r_b_mellow.json",
+      "priority_offset": 1200,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 08 — Soul & R&B · Romantic",
+      "category": "sore",
+      "genre": "Soul & R&B",
+      "mood": "Romantic",
+      "file": "programs\\generated\\afternoon_08_soul_r_b_romantic.json",
+      "priority_offset": 17,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 09 — Soul & R&B · Nostalgic",
+      "category": "sore",
+      "genre": "Soul & R&B",
+      "mood": "Nostalgic",
+      "file": "programs\\generated\\afternoon_09_soul_r_b_nostalgic.json",
+      "priority_offset": 217,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 10 — Soul & R&B · Relaxed",
+      "category": "sore",
+      "genre": "Soul & R&B",
+      "mood": "Relaxed",
+      "file": "programs\\generated\\afternoon_10_soul_r_b_relaxed.json",
+      "priority_offset": 417,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 11 — Soul & R&B · Golden",
+      "category": "sore",
+      "genre": "Soul & R&B",
+      "mood": "Golden",
+      "file": "programs\\generated\\afternoon_11_soul_r_b_golden.json",
+      "priority_offset": 617,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 12 — Soul & R&B · Reflective",
+      "category": "sore",
+      "genre": "Soul & R&B",
+      "mood": "Reflective",
+      "file": "programs\\generated\\afternoon_12_soul_r_b_reflective.json",
+      "priority_offset": 817,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 13 — Jazz & Blues · Mellow",
+      "category": "sore",
+      "genre": "Jazz & Blues",
+      "mood": "Mellow",
+      "file": "programs\\generated\\afternoon_13_jazz_blues_mellow.json",
+      "priority_offset": 1017,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 14 — Jazz & Blues · Romantic",
+      "category": "sore",
+      "genre": "Jazz & Blues",
+      "mood": "Romantic",
+      "file": "programs\\generated\\afternoon_14_jazz_blues_romantic.json",
+      "priority_offset": 1217,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 15 — Jazz & Blues · Nostalgic",
+      "category": "sore",
+      "genre": "Jazz & Blues",
+      "mood": "Nostalgic",
+      "file": "programs\\generated\\afternoon_15_jazz_blues_nostalgic.json",
+      "priority_offset": 34,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 16 — Jazz & Blues · Relaxed",
+      "category": "sore",
+      "genre": "Jazz & Blues",
+      "mood": "Relaxed",
+      "file": "programs\\generated\\afternoon_16_jazz_blues_relaxed.json",
+      "priority_offset": 234,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 17 — Jazz & Blues · Golden",
+      "category": "sore",
+      "genre": "Jazz & Blues",
+      "mood": "Golden",
+      "file": "programs\\generated\\afternoon_17_jazz_blues_golden.json",
+      "priority_offset": 434,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 18 — Jazz & Blues · Reflective",
+      "category": "sore",
+      "genre": "Jazz & Blues",
+      "mood": "Reflective",
+      "file": "programs\\generated\\afternoon_18_jazz_blues_reflective.json",
+      "priority_offset": 634,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 19 — Chillout & Downtempo · Mellow",
+      "category": "sore",
+      "genre": "Chillout & Downtempo",
+      "mood": "Mellow",
+      "file": "programs\\generated\\afternoon_19_chillout_downtempo_mellow.json",
+      "priority_offset": 834,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 20 — Chillout & Downtempo · Romantic",
+      "category": "sore",
+      "genre": "Chillout & Downtempo",
+      "mood": "Romantic",
+      "file": "programs\\generated\\afternoon_20_chillout_downtempo_romantic.json",
+      "priority_offset": 1034,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 21 — Chillout & Downtempo · Nostalgic",
+      "category": "sore",
+      "genre": "Chillout & Downtempo",
+      "mood": "Nostalgic",
+      "file": "programs\\generated\\afternoon_21_chillout_downtempo_nostalgic.json",
+      "priority_offset": 1234,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 22 — Chillout & Downtempo · Relaxed",
+      "category": "sore",
+      "genre": "Chillout & Downtempo",
+      "mood": "Relaxed",
+      "file": "programs\\generated\\afternoon_22_chillout_downtempo_relaxed.json",
+      "priority_offset": 51,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 23 — Chillout & Downtempo · Golden",
+      "category": "sore",
+      "genre": "Chillout & Downtempo",
+      "mood": "Golden",
+      "file": "programs\\generated\\afternoon_23_chillout_downtempo_golden.json",
+      "priority_offset": 251,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 24 — Chillout & Downtempo · Reflective",
+      "category": "sore",
+      "genre": "Chillout & Downtempo",
+      "mood": "Reflective",
+      "file": "programs\\generated\\afternoon_24_chillout_downtempo_reflective.json",
+      "priority_offset": 451,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 25 — Singer-Songwriter · Mellow",
+      "category": "sore",
+      "genre": "Singer-Songwriter",
+      "mood": "Mellow",
+      "file": "programs\\generated\\afternoon_25_singer_songwriter_mellow.json",
+      "priority_offset": 651,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 26 — Singer-Songwriter · Romantic",
+      "category": "sore",
+      "genre": "Singer-Songwriter",
+      "mood": "Romantic",
+      "file": "programs\\generated\\afternoon_26_singer_songwriter_romantic.json",
+      "priority_offset": 851,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 27 — Singer-Songwriter · Nostalgic",
+      "category": "sore",
+      "genre": "Singer-Songwriter",
+      "mood": "Nostalgic",
+      "file": "programs\\generated\\afternoon_27_singer_songwriter_nostalgic.json",
+      "priority_offset": 1051,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 28 — Singer-Songwriter · Relaxed",
+      "category": "sore",
+      "genre": "Singer-Songwriter",
+      "mood": "Relaxed",
+      "file": "programs\\generated\\afternoon_28_singer_songwriter_relaxed.json",
+      "priority_offset": 1251,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 29 — Singer-Songwriter · Golden",
+      "category": "sore",
+      "genre": "Singer-Songwriter",
+      "mood": "Golden",
+      "file": "programs\\generated\\afternoon_29_singer_songwriter_golden.json",
+      "priority_offset": 68,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Afternoon 30 — Singer-Songwriter · Reflective",
+      "category": "sore",
+      "genre": "Singer-Songwriter",
+      "mood": "Reflective",
+      "file": "programs\\generated\\afternoon_30_singer_songwriter_reflective.json",
+      "priority_offset": 268,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 01 — Ambient & Electronic · Sleepy",
+      "category": "malam",
+      "genre": "Ambient & Electronic",
+      "mood": "Sleepy",
+      "file": "programs\\generated\\night_01_ambient_electronic_sleepy.json",
+      "priority_offset": 0,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 02 — Ambient & Electronic · Dreamy",
+      "category": "malam",
+      "genre": "Ambient & Electronic",
+      "mood": "Dreamy",
+      "file": "programs\\generated\\night_02_ambient_electronic_dreamy.json",
+      "priority_offset": 200,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 03 — Ambient & Electronic · Melancholic",
+      "category": "malam",
+      "genre": "Ambient & Electronic",
+      "mood": "Melancholic",
+      "file": "programs\\generated\\night_03_ambient_electronic_melancholic.json",
+      "priority_offset": 400,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 04 — Ambient & Electronic · Intimate",
+      "category": "malam",
+      "genre": "Ambient & Electronic",
+      "mood": "Intimate",
+      "file": "programs\\generated\\night_04_ambient_electronic_intimate.json",
+      "priority_offset": 600,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 05 — Ambient & Electronic · Cinematic",
+      "category": "malam",
+      "genre": "Ambient & Electronic",
+      "mood": "Cinematic",
+      "file": "programs\\generated\\night_05_ambient_electronic_cinematic.json",
+      "priority_offset": 800,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 06 — Ambient & Electronic · Nocturnal",
+      "category": "malam",
+      "genre": "Ambient & Electronic",
+      "mood": "Nocturnal",
+      "file": "programs\\generated\\night_06_ambient_electronic_nocturnal.json",
+      "priority_offset": 1000,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 07 — Lo-Fi & Chillhop · Sleepy",
+      "category": "malam",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Sleepy",
+      "file": "programs\\generated\\night_07_lo_fi_chillhop_sleepy.json",
+      "priority_offset": 1200,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 08 — Lo-Fi & Chillhop · Dreamy",
+      "category": "malam",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Dreamy",
+      "file": "programs\\generated\\night_08_lo_fi_chillhop_dreamy.json",
+      "priority_offset": 17,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 09 — Lo-Fi & Chillhop · Melancholic",
+      "category": "malam",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Melancholic",
+      "file": "programs\\generated\\night_09_lo_fi_chillhop_melancholic.json",
+      "priority_offset": 217,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 10 — Lo-Fi & Chillhop · Intimate",
+      "category": "malam",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Intimate",
+      "file": "programs\\generated\\night_10_lo_fi_chillhop_intimate.json",
+      "priority_offset": 417,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 11 — Lo-Fi & Chillhop · Cinematic",
+      "category": "malam",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Cinematic",
+      "file": "programs\\generated\\night_11_lo_fi_chillhop_cinematic.json",
+      "priority_offset": 617,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 12 — Lo-Fi & Chillhop · Nocturnal",
+      "category": "malam",
+      "genre": "Lo-Fi & Chillhop",
+      "mood": "Nocturnal",
+      "file": "programs\\generated\\night_12_lo_fi_chillhop_nocturnal.json",
+      "priority_offset": 817,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 13 — Piano & Classical · Sleepy",
+      "category": "malam",
+      "genre": "Piano & Classical",
+      "mood": "Sleepy",
+      "file": "programs\\generated\\night_13_piano_classical_sleepy.json",
+      "priority_offset": 1017,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 14 — Piano & Classical · Dreamy",
+      "category": "malam",
+      "genre": "Piano & Classical",
+      "mood": "Dreamy",
+      "file": "programs\\generated\\night_14_piano_classical_dreamy.json",
+      "priority_offset": 1217,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 15 — Piano & Classical · Melancholic",
+      "category": "malam",
+      "genre": "Piano & Classical",
+      "mood": "Melancholic",
+      "file": "programs\\generated\\night_15_piano_classical_melancholic.json",
+      "priority_offset": 34,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 16 — Piano & Classical · Intimate",
+      "category": "malam",
+      "genre": "Piano & Classical",
+      "mood": "Intimate",
+      "file": "programs\\generated\\night_16_piano_classical_intimate.json",
+      "priority_offset": 234,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 17 — Piano & Classical · Cinematic",
+      "category": "malam",
+      "genre": "Piano & Classical",
+      "mood": "Cinematic",
+      "file": "programs\\generated\\night_17_piano_classical_cinematic.json",
+      "priority_offset": 434,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 18 — Piano & Classical · Nocturnal",
+      "category": "malam",
+      "genre": "Piano & Classical",
+      "mood": "Nocturnal",
+      "file": "programs\\generated\\night_18_piano_classical_nocturnal.json",
+      "priority_offset": 634,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 19 — Dream Pop & Shoegaze · Sleepy",
+      "category": "malam",
+      "genre": "Dream Pop & Shoegaze",
+      "mood": "Sleepy",
+      "file": "programs\\generated\\night_19_dream_pop_shoegaze_sleepy.json",
+      "priority_offset": 834,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 20 — Dream Pop & Shoegaze · Dreamy",
+      "category": "malam",
+      "genre": "Dream Pop & Shoegaze",
+      "mood": "Dreamy",
+      "file": "programs\\generated\\night_20_dream_pop_shoegaze_dreamy.json",
+      "priority_offset": 1034,
+      "global_offset": 2700,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 21 — Dream Pop & Shoegaze · Melancholic",
+      "category": "malam",
+      "genre": "Dream Pop & Shoegaze",
+      "mood": "Melancholic",
+      "file": "programs\\generated\\night_21_dream_pop_shoegaze_melancholic.json",
+      "priority_offset": 1234,
+      "global_offset": 0,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 22 — Dream Pop & Shoegaze · Intimate",
+      "category": "malam",
+      "genre": "Dream Pop & Shoegaze",
+      "mood": "Intimate",
+      "file": "programs\\generated\\night_22_dream_pop_shoegaze_intimate.json",
+      "priority_offset": 51,
+      "global_offset": 300,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 23 — Dream Pop & Shoegaze · Cinematic",
+      "category": "malam",
+      "genre": "Dream Pop & Shoegaze",
+      "mood": "Cinematic",
+      "file": "programs\\generated\\night_23_dream_pop_shoegaze_cinematic.json",
+      "priority_offset": 251,
+      "global_offset": 600,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 24 — Dream Pop & Shoegaze · Nocturnal",
+      "category": "malam",
+      "genre": "Dream Pop & Shoegaze",
+      "mood": "Nocturnal",
+      "file": "programs\\generated\\night_24_dream_pop_shoegaze_nocturnal.json",
+      "priority_offset": 451,
+      "global_offset": 900,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 25 — R&B & Soul · Sleepy",
+      "category": "malam",
+      "genre": "R&B & Soul",
+      "mood": "Sleepy",
+      "file": "programs\\generated\\night_25_r_b_soul_sleepy.json",
+      "priority_offset": 651,
+      "global_offset": 1200,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 26 — R&B & Soul · Dreamy",
+      "category": "malam",
+      "genre": "R&B & Soul",
+      "mood": "Dreamy",
+      "file": "programs\\generated\\night_26_r_b_soul_dreamy.json",
+      "priority_offset": 851,
+      "global_offset": 1500,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 27 — R&B & Soul · Melancholic",
+      "category": "malam",
+      "genre": "R&B & Soul",
+      "mood": "Melancholic",
+      "file": "programs\\generated\\night_27_r_b_soul_melancholic.json",
+      "priority_offset": 1051,
+      "global_offset": 1800,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 28 — R&B & Soul · Intimate",
+      "category": "malam",
+      "genre": "R&B & Soul",
+      "mood": "Intimate",
+      "file": "programs\\generated\\night_28_r_b_soul_intimate.json",
+      "priority_offset": 1251,
+      "global_offset": 2100,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 29 — R&B & Soul · Cinematic",
+      "category": "malam",
+      "genre": "R&B & Soul",
+      "mood": "Cinematic",
+      "file": "programs\\generated\\night_29_r_b_soul_cinematic.json",
+      "priority_offset": 68,
+      "global_offset": 2400,
+      "warnings": []
+    },
+    {
+      "playlist_name": "Night 30 — R&B & Soul · Nocturnal",
+      "category": "malam",
+      "genre": "R&B & Soul",
+      "mood": "Nocturnal",
+      "file": "programs\\generated\\night_30_r_b_soul_nocturnal.json",
+      "priority_offset": 268,
+      "global_offset": 2700,
+      "warnings": []
+    }
+  ],
+  "warnings": []
+}

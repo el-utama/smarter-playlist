@@ -1,0 +1,48 @@
+{
+  "name": "Always Chill",
+  "main": "cap_1",
+  "components": {
+    "src_el_utama": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "",
+        "name": "eL Utama",
+        "user": "",
+        "alias": "eL Utama",
+        "cache_mode": "no-cache"
+      },
+      "sources": {}
+    },
+    "dedup_1": {
+      "type": "DeDup",
+      "params": { "by_name": true },
+      "sources": { "green": ["src_el_utama"] }
+    },
+    "mos_1": {
+      "type": "MultiObjectiveSequencer",
+      "params": {
+        "limit": 800,
+        "objectives": [
+          { "type": "range", "field": "energy", "min_val": 0.05, "max_val": 0.45, "weight": "medium" },
+          { "type": "min-separation", "field": "artist", "separation": 4, "weight": "high" },
+          { "type": "variety", "field": "mb_genres", "weight": "low" },
+          { "type": "order-by", "field": "energy", "slots": "1/2", "weight": "medium" },
+          { "type": "order-by", "field": "energy", "inverse": true, "slots": "2/2", "weight": "medium" },
+          { "type": "maximize", "field": "popularity", "weight": "lowest" }
+        ]
+      },
+      "sources": { "green": ["dedup_1"] }
+    },
+    "cap_1": {
+      "type": "ShorterThan",
+      "params": { "time": 540 },
+      "sources": { "green": ["mos_1"] }
+    }
+  },
+  "_positions": {
+    "src_el_utama": { "x": 300, "y": 60 },
+    "dedup_1": { "x": 300, "y": 320 },
+    "mos_1": { "x": 300, "y": 580 },
+    "cap_1": { "x": 300, "y": 980 }
+  }
+}

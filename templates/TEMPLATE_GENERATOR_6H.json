@@ -1,0 +1,456 @@
+{
+  "name": "__PLAYLIST_NAME__",
+  "main": "save",
+  "components": {
+    "comment_intro": {
+      "type": "comment",
+      "params": {
+        "text": "__PLAYLIST_COMMENT__\n\nHow to use: duplicate this program, rename it, and adjust the pool URI, offsets, and ranges. Program name = playlist name. The first run creates the playlist; later runs replace it.",
+        "style": "sticky",
+        "color": "yellow",
+        "size": "medium"
+      },
+      "sources": {}
+    },
+    "comment_priority": {
+      "type": "comment",
+      "params": {
+        "text": "PRIORITY: 26-artist pool. AllButTheFirst = rotation offset. First = candidate count. MaxTracksPerArtist = per-artist limit.",
+        "style": "simple",
+        "color": "blue",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "comment_global": {
+      "type": "comment",
+      "params": {
+        "text": "GLOBAL: genre pool. AllButTheFirst = rotation offset. First = candidate count. MaxTracksPerArtist = global per-artist limit.",
+        "style": "simple",
+        "color": "green",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "comment_rules": {
+      "type": "comment",
+      "params": {
+        "text": "IMPORTANT: ShorterThan time=21600 (6 hours). match-max-run artist max_run=1 unbreakable (no consecutive artist). distribution source priority(60%) global(40%). Do not remove or change without understanding the effect.",
+        "style": "simple",
+        "color": "pink",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "comment_run": {
+      "type": "comment",
+      "params": {
+        "text": "HOW TO RUN: Preview first to check duration and order. When satisfied, Run to save. Pools must exist and their URIs must be filled. Internal pools do not need to be followed.",
+        "style": "simple",
+        "color": "gray",
+        "size": "small"
+      },
+      "sources": {}
+    },
+    "priority_pool": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "spotify:playlist:75Tnr3Zvc0ysnUtBkNNf6n",
+        "name": "POOL Priority",
+        "user": "Devoted2",
+        "alias": "priority",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "priority_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "priority_pool"
+        ]
+      }
+    },
+    "priority_concat": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "priority_dedup",
+          "priority_dedup"
+        ]
+      }
+    },
+    "priority_rotate": {
+      "type": "AllButTheFirst",
+      "params": {
+        "sample_size": "__PRIORITY_OFFSET__"
+      },
+      "sources": {
+        "green": [
+          "priority_concat"
+        ]
+      }
+    },
+    "priority_slice": {
+      "type": "First",
+      "params": {
+        "sample_size": "__PRIORITY_SLICE__"
+      },
+      "sources": {
+        "green": [
+          "priority_rotate"
+        ]
+      }
+    },
+    "priority_max": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": "__PRIORITY_MAX_PER_ARTIST__"
+      },
+      "sources": {
+        "green": [
+          "priority_slice"
+        ]
+      }
+    },
+    "global_pool": {
+      "type": "SpotifyPlaylist",
+      "params": {
+        "uri": "__GLOBAL_POOL_URI__",
+        "name": "__GLOBAL_POOL_NAME__",
+        "user": "Devoted2",
+        "alias": "global",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "global_dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "global_pool"
+        ]
+      }
+    },
+    "global_concat": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "global_dedup",
+          "global_dedup"
+        ]
+      }
+    },
+    "global_rotate": {
+      "type": "AllButTheFirst",
+      "params": {
+        "sample_size": "__GLOBAL_OFFSET__"
+      },
+      "sources": {
+        "green": [
+          "global_concat"
+        ]
+      }
+    },
+    "global_slice": {
+      "type": "First",
+      "params": {
+        "sample_size": "__GLOBAL_SLICE__"
+      },
+      "sources": {
+        "green": [
+          "global_rotate"
+        ]
+      }
+    },
+    "global_max": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": "__GLOBAL_MAX_PER_ARTIST__"
+      },
+      "sources": {
+        "green": [
+          "global_slice"
+        ]
+      }
+    },
+    "combine": {
+      "type": "Concatenate",
+      "params": {},
+      "sources": {
+        "green": [
+          "priority_max",
+          "global_max"
+        ]
+      }
+    },
+    "dedup": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "combine"
+        ]
+      }
+    },
+    "explicit": {
+      "type": "Explicit",
+      "params": {
+        "explicit": false
+      },
+      "sources": {
+        "green": [
+          "dedup"
+        ]
+      }
+    },
+    "playable": {
+      "type": "PlayableFilter",
+      "params": {
+        "relink": true
+      },
+      "sources": {
+        "green": [
+          "explicit"
+        ]
+      }
+    },
+    "mos": {
+      "type": "MultiObjectiveSequencer",
+      "params": {
+        "limit": "__MOS_LIMIT__",
+        "objectives": [
+          {
+            "type": "match-max-run",
+            "field": "artist",
+            "value": "",
+            "max_run": 1,
+            "separation": 2,
+            "weight": "unbreakable"
+          },
+          {
+            "type": "min-separation",
+            "field": "artist",
+            "separation": 2,
+            "weight": "high"
+          },
+          {
+            "type": "distribution",
+            "field": "source",
+            "values": "priority(__PRIORITY_SHARE__%) global(__GLOBAL_SHARE__%)",
+            "weight": "high"
+          },
+          {
+            "type": "match",
+            "field": "artist",
+            "value": "eL Utama",
+            "weight": "__EL_UTAMA_WEIGHT__"
+          },
+          {
+            "type": "minimize",
+            "field": "popularity",
+            "weight": "highest"
+          },
+          {
+            "type": "maximize",
+            "field": "release_year",
+            "weight": "high"
+          },
+          {
+            "type": "max-match",
+            "field": "artist",
+            "max_count": "__PRIORITY_MAX_PER_ARTIST__",
+            "weight": "medium"
+          },
+          {
+            "type": "contains",
+            "field": "mb_genres",
+            "value": "__GENRE_MATCH_VALUE__",
+            "weight": "__GENRE_MATCH_WEIGHT__"
+          },
+          {
+            "type": "range",
+            "field": "energy",
+            "min_val": "__ENERGY_MIN__",
+            "max_val": "__ENERGY_MAX__",
+            "weight": "medium"
+          },
+          {
+            "type": "range",
+            "field": "valence",
+            "min_val": "__VALENCE_MIN__",
+            "max_val": "__VALENCE_MAX__",
+            "weight": "medium"
+          },
+          {
+            "type": "range",
+            "field": "tempo",
+            "min_val": "__TEMPO_MIN__",
+            "max_val": "__TEMPO_MAX__",
+            "weight": "low"
+          },
+          {
+            "type": "range",
+            "field": "danceability",
+            "min_val": "__DANCE_MIN__",
+            "max_val": "__DANCE_MAX__",
+            "weight": "low"
+          },
+          {
+            "type": "range",
+            "field": "acousticness",
+            "min_val": "__ACOUSTIC_MIN__",
+            "max_val": "__ACOUSTIC_MAX__",
+            "weight": "low"
+          },
+          {
+            "type": "variety",
+            "field": "mb_genres",
+            "weight": "low"
+          }
+        ]
+      },
+      "sources": {
+        "green": [
+          "playable"
+        ]
+      }
+    },
+    "cap": {
+      "type": "ShorterThan",
+      "params": {
+        "time": "__CAP_SECONDS__"
+      },
+      "sources": {
+        "green": [
+          "mos"
+        ]
+      }
+    },
+    "save": {
+      "type": "PlaylistSave",
+      "params": {
+        "playlist_name": "__PLAYLIST_NAME__",
+        "playlist_uri": "",
+        "append": false,
+        "auto_reset": "never",
+        "reset_value": 0,
+        "no_dups": true,
+        "description": "__PLAYLIST_DESCRIPTION__"
+      },
+      "sources": {
+        "green": [
+          "cap"
+        ]
+      }
+    }
+  },
+  "_positions": {
+    "comment_intro": {
+      "x": 60,
+      "y": 40
+    },
+    "comment_priority": {
+      "x": 60,
+      "y": 150
+    },
+    "comment_global": {
+      "x": 560,
+      "y": 150
+    },
+    "priority_pool": {
+      "x": 60,
+      "y": 300
+    },
+    "priority_dedup": {
+      "x": 60,
+      "y": 480
+    },
+    "priority_concat": {
+      "x": 60,
+      "y": 620
+    },
+    "priority_rotate": {
+      "x": 60,
+      "y": 760
+    },
+    "priority_slice": {
+      "x": 60,
+      "y": 900
+    },
+    "priority_max": {
+      "x": 60,
+      "y": 1040
+    },
+    "global_pool": {
+      "x": 560,
+      "y": 300
+    },
+    "global_dedup": {
+      "x": 560,
+      "y": 480
+    },
+    "global_concat": {
+      "x": 560,
+      "y": 620
+    },
+    "global_rotate": {
+      "x": 560,
+      "y": 760
+    },
+    "global_slice": {
+      "x": 560,
+      "y": 900
+    },
+    "global_max": {
+      "x": 560,
+      "y": 1040
+    },
+    "combine": {
+      "x": 320,
+      "y": 1200
+    },
+    "dedup": {
+      "x": 320,
+      "y": 1340
+    },
+    "explicit": {
+      "x": 320,
+      "y": 1480
+    },
+    "playable": {
+      "x": 320,
+      "y": 1620
+    },
+    "mos": {
+      "x": 320,
+      "y": 1760
+    },
+    "cap": {
+      "x": 320,
+      "y": 2200
+    },
+    "save": {
+      "x": 320,
+      "y": 2340
+    },
+    "comment_rules": {
+      "x": 860,
+      "y": 1340
+    },
+    "comment_run": {
+      "x": 860,
+      "y": 1620
+    }
+  }
+}

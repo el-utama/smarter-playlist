@@ -1,0 +1,521 @@
+{
+  "name": "POOL Midday - Funk & Groove",
+  "main": "spread",
+  "components": {
+    "comment_intro": {
+      "type": "comment",
+      "params": {
+        "text": "POOL: POOL Midday - Funk & Groove\nCategory: Midday · Genre: Funk & Groove\nTags: funk, disco, boogie\nGenre filter: funk\nExplicit: clean\nInternal pool; no need to follow.",
+        "style": "sticky",
+        "color": "yellow",
+        "size": "medium"
+      },
+      "sources": {}
+    },
+    "tag1": {
+      "type": "LastFmTagTopTracks",
+      "params": {
+        "tag": "funk",
+        "limit": 1000,
+        "alias": "tag1",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "tag2": {
+      "type": "LastFmTagTopTracks",
+      "params": {
+        "tag": "disco",
+        "limit": 1000,
+        "alias": "tag2",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "tag3": {
+      "type": "LastFmTagTopTracks",
+      "params": {
+        "tag": "boogie",
+        "limit": 1000,
+        "alias": "tag3",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "genre_artists": {
+      "type": "GenreArtists",
+      "params": {
+        "genre": "funk",
+        "count": 50,
+        "primary_only": false,
+        "alias": "genre_artists",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "genre_tracks_least": {
+      "type": "ToTracks",
+      "params": {
+        "select": "least_popular",
+        "count": 10,
+        "limit": 0
+      },
+      "sources": {
+        "green": [
+          "genre_artists"
+        ]
+      }
+    },
+    "genre_tracks_most": {
+      "type": "ToTracks",
+      "params": {
+        "select": "most_popular",
+        "count": 10,
+        "limit": 0
+      },
+      "sources": {
+        "green": [
+          "genre_artists"
+        ]
+      }
+    },
+    "genre_tracks_newest": {
+      "type": "ToTracks",
+      "params": {
+        "select": "newest",
+        "count": 10,
+        "limit": 0
+      },
+      "sources": {
+        "green": [
+          "genre_artists"
+        ]
+      }
+    },
+    "genre_tracks": {
+      "type": "ToTracks",
+      "params": {
+        "select": "album_order",
+        "count": 10,
+        "limit": 0
+      },
+      "sources": {
+        "green": [
+          "genre_artists"
+        ]
+      }
+    },
+    "desc1": {
+      "type": "TracksByDescription",
+      "params": {
+        "description": "groovy funk",
+        "limit": 200,
+        "alias": "desc1",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "desc2": {
+      "type": "TracksByDescription",
+      "params": {
+        "description": "upbeat disco funk",
+        "limit": 200,
+        "alias": "desc2",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "radio1": {
+      "type": "SpotifyArtistRadio",
+      "params": {
+        "uri": "spotify:artist:496LieGSK89fUGRXj6hv2O",
+        "name": "JAVE VANCE FAHRI",
+        "alias": "radio1",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "radio2": {
+      "type": "SpotifyArtistRadio",
+      "params": {
+        "uri": "spotify:artist:5YskW3SgeHmRiYpKFzQyl2",
+        "name": "Kade Valen",
+        "alias": "radio2",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "radio3": {
+      "type": "SpotifyArtistRadio",
+      "params": {
+        "uri": "spotify:artist:1TavrasoByZRVucn2l3THN",
+        "name": "kaia stone",
+        "alias": "radio3",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "playable": {
+      "type": "PlayableFilter",
+      "params": {
+        "relink": true
+      },
+      "sources": {
+        "green": [
+          "tag1",
+          "tag2",
+          "tag3",
+          "genre_tracks_least",
+          "genre_tracks_most",
+          "genre_tracks_newest",
+          "genre_tracks",
+          "desc1",
+          "desc2",
+          "radio1",
+          "radio2",
+          "radio3"
+        ]
+      }
+    },
+    "pool": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": [
+          "playable"
+        ]
+      }
+    },
+    "explicit": {
+      "type": "Explicit",
+      "params": {
+        "explicit": false
+      },
+      "sources": {
+        "green": [
+          "pool"
+        ]
+      }
+    },
+    "clean_titles": {
+      "type": "TextFilter",
+      "params": {
+        "text": "(?i)(live at|live from|live session|live version|karaoke|cover version|sped up|slowed|reverb|instrumental version|commentary)",
+        "ignore_case": true,
+        "invert": true
+      },
+      "sources": {
+        "green": [
+          "explicit"
+        ]
+      }
+    },
+    "no_priority": {
+      "type": "SimpleArtistFilter",
+      "params": {
+        "artistNames": "aangfahromy, Aksara Bhumi, ARUNA LEXIA QAISARA, Blue Ember Society, Chloe Spark, Cleo Harlow, Fazrian Vance, Hazel Meadow, Ivy Meadow, JAVE VANCE FAHRI, Kade Valen, kaia stone, LEER LAWSON, LER ACAAK, Mutiara ara, NADYA SEPTIANI IKA, Onyx Wilde, Orbit Oles, Romy Sparks, Ryan Thorne, Sienna Cruz Zarine, Sierra Dusk Cheyenne, STELLA ECHO FIKA, Vince Lamine, Voxia Neon Dhea, eL Utama"
+      },
+      "sources": {
+        "green": [
+          "clean_titles"
+        ]
+      }
+    },
+    "used_series": {
+      "type": "TrackSource",
+      "params": {
+        "uris": "spotify:track:2B5LHTBl399j71jOwcDniF spotify:track:5ABS8VV9OgQk2puBo6QJRs spotify:track:6ah6s6WSJWihJ9RscifqC2 spotify:track:6qkJi0vOx4g6Ir3NYoUa55 spotify:track:1sTvLU2nLbQlIptbdtgqE5 spotify:track:6bXfnshW9afuXabUiEvdbl spotify:track:3grrqmF2FldWaIRYJZJmC8 spotify:track:4sVF3j7hDJJ8jezFPBMgRu spotify:track:0WXFi2NSNY6JZo7dbcNkIv spotify:track:4pkNytJkKIFhEKJ95rpbzA spotify:track:2m4EJN51sAmZjewT5M9cz2 spotify:track:6avjLz5Qmf9zVpuUbuCrmx spotify:track:24YqvcfW95xA5F02gqCsnw spotify:track:3qhlB30KknSejmIvZZLjOD spotify:track:6nqjwdD5RF53IwXtdwpVtL spotify:track:4U8IVcMK1YWTslzgztW65m spotify:track:3WwN3RpCcccmE4pIyj3EJ8 spotify:track:1fn30s4vYtD6K2qZFVNvyc spotify:track:7ci0Nf1Eul58MiaS5ohxQt spotify:track:3k9B3hj2ep0LTPx7nI5aHZ spotify:track:5jbgbr50bRE5sn20LWm6Po spotify:track:56QTT6LffjwDBhuVBpPNzi spotify:track:3pIYxKUceFV7MPVvIr4qjc spotify:track:7AfKtxxS03KcbaZYqhP5yM spotify:track:1IfglOBm0a5rpSxiNvN7eB spotify:track:0XOp2GFvDAP8D9qGCItNd7 spotify:track:4cgJHdZgydSywlhc6cEYqF spotify:track:77x6J12R6K2boz9JRkSKiS spotify:track:32cnjyw5mvqkxrR16e8TsT spotify:track:2g4pNiVwKVD57Vgf2avjKP spotify:track:0ZoJpA7IjrUnVXpDd6lC19 spotify:track:3PyjDl5JsrMw2HiFRCCl81 spotify:track:0BOMhShuVnnttfabz2AYeJ spotify:track:08mLWvmxctHLqV3x84NbmR spotify:track:5yh0SIMfLxynfqrQIfOPig spotify:track:5nuuK66SnxCbMu8AVZgQkF spotify:track:5l2lqP85GiTiUgFL5xoXI5 spotify:track:2d178oMemQOWasi8vbG4X2 spotify:track:2rSqS7UqZSaRV85hFPkrCb spotify:track:1f68UGjW1aTXAoI48KkIPq spotify:track:0PzVxwllmBYNwfp7jkhgwH spotify:track:5RU9thsmSdBgf9ciD7ux27 spotify:track:0LI5YiBVw1t1VY81DLwffr spotify:track:5wETNLUX3tXQe4qyF9imLG spotify:track:23ouNivqJxKgLENrlLGa4H spotify:track:3h5T5JypYU7huFiVYhv1dr spotify:track:1iPHR9UHkaKLDbQv995pHc spotify:track:2gLwWxbUCZqmUBfxP6XRvC spotify:track:1USbVuQ69l1mrzncqn7vdR spotify:track:21IYMdzTrzSe191Cy5eMap spotify:track:763QtMcDb5Pq8z1EGkxZM8 spotify:track:2Sm4W29GDeHCGCCol1dcfa spotify:track:2sPRvsnAjlO9IPNe4kJOFQ spotify:track:0okxzWGRpIOLFJl0AFoWGE spotify:track:0EUmlW1opdb94fnw2MiH2m spotify:track:0IaLvLwhbgP22AqrHc8kRC spotify:track:0kQkWiG1IXRE9yf4sKdilS spotify:track:1NzbmgUAcprBHMxc3J8uQ3 spotify:track:2aFfsIgQFDxIPt5PM2tfGx spotify:track:55pBIZO1cqoldeqpp5WR7H spotify:track:57E5PaR2dxLtdy8FtUicRe spotify:track:2pKYsDoCv0nRuvq5pxOu01 spotify:track:197syiUvEKJlzOFZUHKXZR spotify:track:2LQD2OGpPt1mpZWLJ3XbFa spotify:track:3cDWPmD7h6OnfGQ9b83WFB spotify:track:77NWZOgYBUX3Snxn4NJljy spotify:track:4VrrRjWZweNZwlTgZiAFfp spotify:track:16gBPWCh37zGRIdXkVgAFJ spotify:track:0mYXRQpTGjaLJt1l9MY4ps spotify:track:3cquFrEflbOrqFvVYvmSQy spotify:track:1mW0O7Pne5i8Dzng9dcKYV spotify:track:5WaQxJpsfB6TS4UPD8Lypo spotify:track:6l3j1dODFzq1gzeLmfIpwF spotify:track:5CLZQDAHNFeOTRE8LPKIkN spotify:track:5pZcJCjGcAckw7R7L9P8JG spotify:track:2UhxJkXVawB1zWzoOqHZcD spotify:track:6wGLMCT3PAhzHGn1pp0hIi spotify:track:58Fc4ZXRCR0tst7S9WANYJ spotify:track:6AVBoPFPax2pMv3U1hebu8 spotify:track:2sFepQNyl1WjpROruP8bJ0 spotify:track:7qjZnBKE73H4Oxkopwulqe spotify:track:6U9VpmP3dEinuezxCJ2Zg9 spotify:track:00FyCi0TusbsvhMyQW6mwz spotify:track:1LZGqPwooW1xzOaw72v9H3 spotify:track:2V58diLmGmP9tLeC3IK6Ah spotify:track:0VMpCIZSOpUlps26XOndjE spotify:track:2009X8GyWTqyxIdzAEYW6N spotify:track:0FzG5WiAhO4ienVlN3fqXd spotify:track:3XmwAZpIMNpTJy8faw3ajD spotify:track:7AdkTR4PXHWY0U0yPbZDiP spotify:track:6QFCMUUq1T2Vf5sFUXcuQ7 spotify:track:4Yx8j1uHLWtAVdQ47ThUfg spotify:track:70cHKK8bHAfJrOGVnfRG9J spotify:track:11rn0RsPOVuEn2pdO9XzCG spotify:track:6QBtZWh75x07yaBYfHCKPe spotify:track:60pKvP4urN7g3O7zoeAYjq spotify:track:2GXPMjXHNZNfCxy1fUPxM1 spotify:track:1YRefZuL7vQibxQD0sR9sa spotify:track:5gg4YavGF4YeBGiFc9oQry spotify:track:2LX6El3Im0y6ZC9wcYHWyN spotify:track:4L64aTY1XoTwV86EvcHwEx spotify:track:1ZkVUJRYeJjySaqCkCV0wX spotify:track:76XqfAHI3QFCHXlS2EQGXB spotify:track:43NkSus4rem1UzDSO6HJ2P spotify:track:6ZnQJB1GzCuH73kjHEdFO9 spotify:track:3MJDmmGOQcYGj52nsSODZn spotify:track:532idGo9uUzB77AYiCKjby spotify:track:5KnZID0q8saq1XUbu22ug3 spotify:track:5scVjJOjp4gDPLA7mlFwsU spotify:track:0eAuGrXyGFYwur9ARUe7LJ spotify:track:6NePIGWAzAZJCVicbxguwY spotify:track:4We7iWP2tRpN4WaBGgqhvK spotify:track:6dOtVTDdiauQNBQEDOtlAB spotify:track:4DRYCdkbWfyBaZiMATfqGv spotify:track:2LaYNbn9FS3Ax9MktQzqi0 spotify:track:2J3vHWhpBO5BKlElIzTaXA spotify:track:1mKXFLRA179hdOWQBwUk9e spotify:track:6qWopPx2DTWJRM6U6vHdQJ spotify:track:3CrJeMkSVVqA2Eew6ERiOP spotify:track:3hfZ58POc8dLKWaBdbQQQ8 spotify:track:18kXPiYR2EnXzRmnV5g1av spotify:track:3D0Wsm3oDlpLIEBA4krpXQ spotify:track:5xLhXNnrhZq18Uxo9jtb5C spotify:track:0Nv7e7xVoHqdlFjML7go1A spotify:track:3LILFe1ElBzEcf7yBFv9Ni spotify:track:0XnVG70emFCu65OhmaV6qh spotify:track:78lJbaIwTNml3utiTOpenK spotify:track:2hyACIRkzE9S5YcdYgasqy spotify:track:2QTMLZ01Lh7zEJv4D8Bl2K spotify:track:7lDTdNaOmljxw9UQBAdBIu spotify:track:0Lhj38xjrUrMhJP1G13e10 spotify:track:6UgJrdLeqhKFOOdij0F8dZ spotify:track:4BxRdxWLffL4v8kPHOlsMB spotify:track:0tIZPhRia77mBYF0f64PKt spotify:track:08m3YD9DAcitY1d4LBZ7lh spotify:track:2lpygKqzPFtItQ4ss3cgfb spotify:track:4Or5ACjVzqzCDtJMy9DrZA spotify:track:3z1EXG5k2i15Mf6mbiCWs9 spotify:track:4XZXkqkCBJ6AujhImlyDak spotify:track:6GhiWBtL8pZhjmCt4TtKzb spotify:track:3QaPy1KgI7nu9FJEQUgn6h spotify:track:0jICTTh3zMeTkqo1HeVafr spotify:track:3l4RSNbuTsyCUnckfuo9Zf spotify:track:77mgtQYpknrxcTpJQRRdNY spotify:track:3idCqKW2TF0OcSu3Da8IQW spotify:track:7fCVDPS1MIMhyNR430a4PR spotify:track:7954qKXqYslkMSPTDGIQQp spotify:track:1e3fXrbT7EWChBCD10JpXM spotify:track:26JxBemZcMHtaqIrXLI4Bf spotify:track:6ZdaKhgNJriatBlvUdskWG spotify:track:7yLzuFyxsV3APsRWuAVd3W spotify:track:36CNG8IFiRcm9t19VHIIl9 spotify:track:3cCpVrG3TQdvvUp7YSzhZv spotify:track:6F3TSGO68sqB78hHacW8Nb spotify:track:6iYG9AvytNvTbA0NUR9DE5 spotify:track:3NMcoOHqS1yKtgTv1IKWas spotify:track:7xL4ebFk4Do8eOOsEXyCEX spotify:track:4pT98OSCPQxcpc5I6GZCsi spotify:track:0IWP4lmblhmVf8vdsik6as spotify:track:5KvJC8SmRMU3mDccyzzAbR spotify:track:18xfockV1OQRQ5t8Mphcj4 spotify:track:69gmk6Ox952Annc9NsoNUU spotify:track:1trivScZ6d8T8U0OjDzpo5 spotify:track:78HdvSv5BZ2SAhalaJLUXq spotify:track:70LcF31zb1H0PyJoS1Sx1r spotify:track:52pW6AbpgerI6kzZ3segCt spotify:track:5GpzYjXZteNEa2CglZJOzY spotify:track:4kfo33twHAzRvVXszVqK01 spotify:track:1CJjpKUYMgtf8IEX32XuDU spotify:track:3st6mBcL6SpBCrKpdZGKWs spotify:track:26DbYogdyvUPgunNWH3gH3 spotify:track:0slEPMG5QXLISZMe3jKyR9 spotify:track:3xvwidg7H7yrJ9wYvhx58s spotify:track:33lUsB3q0XP7uVzvAwbYnx spotify:track:3LKCIdfkHizRLt3ddee3s2 spotify:track:16EMDw98zmfkRLe0V1zOaz spotify:track:1SeN7W9OwQJ72RWnDQQ4Ll spotify:track:2LiZWVDyRxdYy4Ke2553gD spotify:track:3G9aIJLSiVIEGZ6NjzrJxr spotify:track:2nynb3JJG5R4NkBFp9AsRU spotify:track:3iy2QuCtCzpWnR6tia39AB spotify:track:5hT7tNVlcXWcU0Z5JNW3i4 spotify:track:2T9dPubUWiqLtdZal4Fj1C spotify:track:1HV2utW1sIdraHmrecLMdb spotify:track:1lJjSOiIrDq8lLAXAr6PKU spotify:track:1OPoXWmkMHc3QkJVbrhBXp spotify:track:1TZdAEVK9rVBg8jbznAkAJ spotify:track:4QEnmcGHDM3gAvHbpDrrEe spotify:track:06gsgzvhgyeVsEpThMA9rN spotify:track:6TWmo9kHKTfIsnfUWzIAqq spotify:track:1vBnKCIo6UAii9w7Xdtyf4 spotify:track:1vWXWKUR0lePHKM5nBlroo spotify:track:3VNAYMvArQYDjjnDgglosb spotify:track:2XyTnTr95QUGUgPDlFnNiF spotify:track:6YMEomoocOn39CtgPQQxD0 spotify:track:3pAcIPNUoeAqFGGeBu5kPU spotify:track:247Ekt6VHDJdZae2ergWfm spotify:track:0Zy7Z2dVidRYBs4M9JxcYw spotify:track:2iwWtEgHph6Xf7WgYkpOLB spotify:track:2eTe801kEfLmsdPgsmo79V spotify:track:5yavGqkuLJhmhWRxG1OAEn spotify:track:0rSe3IbvlhtTxJNx7j3ZuT spotify:track:40JkrvAI7R00p0qmo2Tvf4 spotify:track:2HLIn3aSgXz8vBkrCTQKEq spotify:track:6TYOnGdZpmAUasZcb5v2nn spotify:track:3yfhN4knw5X0N22I96TuU7 spotify:track:2Gu9ySlLNKxEVeDiXkdygw spotify:track:1p2IvGjqfL4eRNQ8TTVANT spotify:track:2sMOTyaQadWEExQDwzbWD9 spotify:track:0g02HNuQTHYwiAy7d4vGDt spotify:track:7Jr1mOmDnYXQdqnAlPr52H spotify:track:28vu4l7Br1qyBBVyPrHQEL spotify:track:323aKsQii9Z6H4YFwywzns spotify:track:7oDyE5RjdS3Wu2knLcHEeL spotify:track:6yXIHOXbm3YU5kMmIwbXFG spotify:track:4LgVsTuX1ntCTi7Sx4GNhA spotify:track:3oo4GUqH4RlEB3YmzWbabk spotify:track:63UjHCaNjqFNc7p2aKFpia spotify:track:6skzg664QCpLaL7vvATRnU spotify:track:23QEasW6vXl7WHhY3MODW3 spotify:track:4DxrPk1zE63flAcImcoxkq spotify:track:1HJnhM9iT2cGQea3P5BNyP spotify:track:5upw0ijgG5NBDTYtVh18s1 spotify:track:0vZPPCmeat8i3SydwwWU5f spotify:track:4LyWwpNqPZMQ9TGaIjJsXZ spotify:track:7J1uxwnxfQLu4APicE5Rnj spotify:track:46NmuxXXOT6FRid5aeT5Ex spotify:track:7so0lgd0zP2Sbgs2d7a1SZ spotify:track:49j6SvuvWfbEKZKzsHCdLJ spotify:track:56NYlBucKFL8l5zpjJL5vG spotify:track:3NVFDMEMhZeXsbjk24sVhe spotify:track:4vV3UIJhjumxXj8D2RKt8R spotify:track:7t81B9JJQCs6Hx7YsHQMnd spotify:track:3MBwWQHizPoQqYzzMKFfg7 spotify:track:4qW3BbQAwZsrnu8a3ZRdyT spotify:track:5r6lEySCSXLshfP4QM48Ru spotify:track:7MOO89Qv9AV7VZkt5mcqA8 spotify:track:0SNXidswOY2utRRIBWXFn1 spotify:track:6BUfRk6rzzjt6lL9Y5uq7M spotify:track:1bkl5SMtD0sfUIKsgNL2u2",
+        "name": "Used in series",
+        "alias": "used",
+        "cache_mode": "no-cache"
+      },
+      "sources": {}
+    },
+    "fresh": {
+      "type": "TrackFilter",
+      "params": {
+        "invert": false,
+        "by_name": true
+      },
+      "sources": {
+        "green": [
+          "no_priority"
+        ],
+        "red": [
+          "used_series"
+        ]
+      }
+    },
+    "genre_filter": {
+      "type": "GenreFilter",
+      "params": {
+        "genre": "funk",
+        "match_type": "substring",
+        "primary_genre_only": false,
+        "invert": false
+      },
+      "sources": {
+        "green": [
+          "fresh"
+        ]
+      }
+    },
+    "energy": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "energy",
+        "min_val": 0.5,
+        "max_val": 0.95,
+        "match": ""
+      },
+      "sources": {
+        "green": [
+          "genre_filter"
+        ]
+      }
+    },
+    "valence": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "valence",
+        "min_val": 0.4,
+        "max_val": 0.95,
+        "match": ""
+      },
+      "sources": {
+        "green": [
+          "energy"
+        ]
+      }
+    },
+    "tempo": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "tempo",
+        "min_val": 90,
+        "max_val": 150,
+        "match": ""
+      },
+      "sources": {
+        "green": [
+          "valence"
+        ]
+      }
+    },
+    "dance": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "danceability",
+        "min_val": 0.45,
+        "max_val": 0.95,
+        "match": ""
+      },
+      "sources": {
+        "green": [
+          "tempo"
+        ]
+      }
+    },
+    "acoustic": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "acousticness",
+        "min_val": 0.0,
+        "max_val": 0.45,
+        "match": ""
+      },
+      "sources": {
+        "green": [
+          "dance"
+        ]
+      }
+    },
+    "dur": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "duration_ms",
+        "min_val": 60000,
+        "max_val": 600000,
+        "match": ""
+      },
+      "sources": {
+        "green": [
+          "acoustic"
+        ]
+      }
+    },
+    "max_artist": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": 3
+      },
+      "sources": {
+        "green": [
+          "dur"
+        ]
+      }
+    },
+    "first": {
+      "type": "First",
+      "params": {
+        "sample_size": 3000
+      },
+      "sources": {
+        "green": [
+          "max_artist"
+        ]
+      }
+    },
+    "spread": {
+      "type": "SeparateArtists",
+      "params": {},
+      "sources": {
+        "green": [
+          "first"
+        ]
+      }
+    },
+    "comment_rules": {
+      "type": "comment",
+      "params": {
+        "text": "GLOBAL POOL: sources = Last.fm tags + MusicBrainz genre + Spotify Artist Radio + Tracks By Description. Hard filters: playable, explicit (category), live/karaoke titles, 26 priority artists, genre, category audio ranges, duration. Max 3 tracks per global artist. Internal pool; no need to follow.",
+        "style": "simple",
+        "color": "green",
+        "size": "small"
+      },
+      "sources": {}
+    }
+  },
+  "_positions": {
+    "comment_intro": {
+      "x": 60,
+      "y": 40
+    },
+    "tag1": {
+      "x": 60,
+      "y": 220
+    },
+    "tag2": {
+      "x": 60,
+      "y": 380
+    },
+    "tag3": {
+      "x": 60,
+      "y": 540
+    },
+    "genre_artists": {
+      "x": 420,
+      "y": 220
+    },
+    "genre_tracks_least": {
+      "x": 420,
+      "y": 380
+    },
+    "genre_tracks_most": {
+      "x": 420,
+      "y": 480
+    },
+    "genre_tracks_newest": {
+      "x": 420,
+      "y": 580
+    },
+    "genre_tracks": {
+      "x": 420,
+      "y": 680
+    },
+    "desc1": {
+      "x": 780,
+      "y": 220
+    },
+    "desc2": {
+      "x": 780,
+      "y": 380
+    },
+    "radio1": {
+      "x": 1140,
+      "y": 220
+    },
+    "radio2": {
+      "x": 1140,
+      "y": 380
+    },
+    "radio3": {
+      "x": 1140,
+      "y": 540
+    },
+    "playable": {
+      "x": 540,
+      "y": 660
+    },
+    "pool": {
+      "x": 540,
+      "y": 760
+    },
+    "explicit": {
+      "x": 540,
+      "y": 920
+    },
+    "clean_titles": {
+      "x": 540,
+      "y": 1080
+    },
+    "no_priority": {
+      "x": 540,
+      "y": 1240
+    },
+    "used_series": {
+      "x": 900,
+      "y": 1240
+    },
+    "fresh": {
+      "x": 540,
+      "y": 1400
+    },
+    "genre_filter": {
+      "x": 540,
+      "y": 1560
+    },
+    "energy": {
+      "x": 540,
+      "y": 1720
+    },
+    "valence": {
+      "x": 540,
+      "y": 1880
+    },
+    "tempo": {
+      "x": 540,
+      "y": 2040
+    },
+    "dance": {
+      "x": 540,
+      "y": 2200
+    },
+    "acoustic": {
+      "x": 540,
+      "y": 2360
+    },
+    "dur": {
+      "x": 540,
+      "y": 2520
+    },
+    "max_artist": {
+      "x": 540,
+      "y": 2680
+    },
+    "first": {
+      "x": 540,
+      "y": 2840
+    },
+    "spread": {
+      "x": 540,
+      "y": 3000
+    },
+    "comment_rules": {
+      "x": 980,
+      "y": 1720
+    }
+  }
+}

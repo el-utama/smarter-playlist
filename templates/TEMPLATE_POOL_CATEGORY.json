@@ -1,0 +1,372 @@
+{
+  "name": "__POOL_PROGRAM_NAME__",
+  "main": "spread",
+  "components": {
+    "comment_intro": {
+      "type": "comment",
+      "params": {
+        "text": "__POOL_COMMENT__",
+        "style": "sticky",
+        "color": "yellow",
+        "size": "medium"
+      },
+      "sources": {}
+    },
+    "tag1": {
+      "type": "LastFmTagTopTracks",
+      "params": {
+        "tag": "__TAG_1__",
+        "limit": "__TAG_LIMIT__",
+        "alias": "tag1",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "tag2": {
+      "type": "LastFmTagTopTracks",
+      "params": {
+        "tag": "__TAG_2__",
+        "limit": "__TAG_LIMIT__",
+        "alias": "tag2",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "tag3": {
+      "type": "LastFmTagTopTracks",
+      "params": {
+        "tag": "__TAG_3__",
+        "limit": "__TAG_LIMIT__",
+        "alias": "tag3",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "genre_artists": {
+      "type": "GenreArtists",
+      "params": {
+        "genre": "__ARTIST_GENRE__",
+        "count": "__GENRE_ARTISTS_COUNT__",
+        "primary_only": false,
+        "alias": "genre_artists",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "genre_tracks_least": {
+      "type": "ToTracks",
+      "params": {
+        "select": "least_popular",
+        "count": "__GENRE_TRACKS_PER_ARTIST__",
+        "limit": 0
+      },
+      "sources": {
+        "green": ["genre_artists"]
+      }
+    },
+    "genre_tracks_most": {
+      "type": "ToTracks",
+      "params": {
+        "select": "most_popular",
+        "count": "__GENRE_TRACKS_PER_ARTIST__",
+        "limit": 0
+      },
+      "sources": {
+        "green": ["genre_artists"]
+      }
+    },
+    "genre_tracks_newest": {
+      "type": "ToTracks",
+      "params": {
+        "select": "newest",
+        "count": "__GENRE_TRACKS_PER_ARTIST__",
+        "limit": 0
+      },
+      "sources": {
+        "green": ["genre_artists"]
+      }
+    },
+    "genre_tracks": {
+      "type": "ToTracks",
+      "params": {
+        "select": "album_order",
+        "count": "__GENRE_TRACKS_PER_ARTIST__",
+        "limit": 0
+      },
+      "sources": {
+        "green": ["genre_artists"]
+      }
+    },
+    "desc1": {
+      "type": "TracksByDescription",
+      "params": {
+        "description": "__DESC_1__",
+        "limit": "__DESC_LIMIT__",
+        "alias": "desc1",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "desc2": {
+      "type": "TracksByDescription",
+      "params": {
+        "description": "__DESC_2__",
+        "limit": "__DESC_LIMIT__",
+        "alias": "desc2",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "radio1": {
+      "type": "SpotifyArtistRadio",
+      "params": {
+        "uri": "__RADIO_SEED_URI_1__",
+        "name": "__RADIO_SEED_NAME_1__",
+        "alias": "radio1",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "radio2": {
+      "type": "SpotifyArtistRadio",
+      "params": {
+        "uri": "__RADIO_SEED_URI_2__",
+        "name": "__RADIO_SEED_NAME_2__",
+        "alias": "radio2",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "radio3": {
+      "type": "SpotifyArtistRadio",
+      "params": {
+        "uri": "__RADIO_SEED_URI_3__",
+        "name": "__RADIO_SEED_NAME_3__",
+        "alias": "radio3",
+        "cache_mode": "short-term"
+      },
+      "sources": {}
+    },
+    "playable": {
+      "type": "PlayableFilter",
+      "params": {
+        "relink": true
+      },
+      "sources": {
+        "green": ["tag1", "tag2", "tag3", "genre_tracks_least", "genre_tracks_most", "genre_tracks_newest", "genre_tracks", "desc1", "desc2", "radio1", "radio2", "radio3"]
+      }
+    },
+    "pool": {
+      "type": "DeDup",
+      "params": {
+        "by_name": false
+      },
+      "sources": {
+        "green": ["playable"]
+      }
+    },
+    "explicit": {
+      "type": "Explicit",
+      "params": {
+        "explicit": false
+      },
+      "sources": {
+        "green": ["pool"]
+      }
+    },
+    "clean_titles": {
+      "type": "TextFilter",
+      "params": {
+        "text": "__EXCLUDE_PATTERNS_REGEX__",
+        "ignore_case": true,
+        "invert": true
+      },
+      "sources": {
+        "green": ["explicit"]
+      }
+    },
+    "no_priority": {
+      "type": "SimpleArtistFilter",
+      "params": {
+        "artistNames": "__PRIORITY_ARTIST_NAMES__"
+      },
+      "sources": {
+        "green": ["clean_titles"]
+      }
+    },
+    "used_series": {
+      "type": "TrackSource",
+      "params": {
+        "uris": "__SERIES_EXCLUSION_URIS__",
+        "name": "Used in series",
+        "alias": "used",
+        "cache_mode": "no-cache"
+      },
+      "sources": {}
+    },
+    "fresh": {
+      "type": "TrackFilter",
+      "params": {
+        "invert": false,
+        "by_name": true
+      },
+      "sources": {
+        "green": ["no_priority"],
+        "red": ["used_series"]
+      }
+    },
+    "genre_filter": {
+      "type": "GenreFilter",
+      "params": {
+        "genre": "__GENRE_FILTER__",
+        "match_type": "substring",
+        "primary_genre_only": false,
+        "invert": false
+      },
+      "sources": {
+        "green": ["fresh"]
+      }
+    },
+    "energy": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "energy",
+        "min_val": "__ENERGY_MIN__",
+        "max_val": "__ENERGY_MAX__",
+        "match": ""
+      },
+      "sources": {
+        "green": ["genre_filter"]
+      }
+    },
+    "valence": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "valence",
+        "min_val": "__VALENCE_MIN__",
+        "max_val": "__VALENCE_MAX__",
+        "match": ""
+      },
+      "sources": {
+        "green": ["energy"]
+      }
+    },
+    "tempo": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "tempo",
+        "min_val": "__TEMPO_MIN__",
+        "max_val": "__TEMPO_MAX__",
+        "match": ""
+      },
+      "sources": {
+        "green": ["valence"]
+      }
+    },
+    "dance": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "danceability",
+        "min_val": "__DANCE_MIN__",
+        "max_val": "__DANCE_MAX__",
+        "match": ""
+      },
+      "sources": {
+        "green": ["tempo"]
+      }
+    },
+    "acoustic": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "acousticness",
+        "min_val": "__ACOUSTIC_MIN__",
+        "max_val": "__ACOUSTIC_MAX__",
+        "match": ""
+      },
+      "sources": {
+        "green": ["dance"]
+      }
+    },
+    "dur": {
+      "type": "AttributeRangeFilter",
+      "params": {
+        "attr": "duration_ms",
+        "min_val": "__MIN_DURATION_MS__",
+        "max_val": "__MAX_DURATION_MS__",
+        "match": ""
+      },
+      "sources": {
+        "green": ["acoustic"]
+      }
+    },
+    "max_artist": {
+      "type": "MaxTracksPerArtist",
+      "params": {
+        "max_tracks": "__GLOBAL_MAX_PER_ARTIST__"
+      },
+      "sources": {
+        "green": ["dur"]
+      }
+    },
+    "first": {
+      "type": "First",
+      "params": {
+        "sample_size": "__POOL_SIZE__"
+      },
+      "sources": {
+        "green": ["max_artist"]
+      }
+    },
+    "spread": {
+      "type": "SeparateArtists",
+      "params": {},
+      "sources": {
+        "green": ["first"]
+      }
+    },
+    "comment_rules": {
+      "type": "comment",
+      "params": {
+        "text": "GLOBAL POOL: sources = Last.fm tags + MusicBrainz genre + Spotify Artist Radio + Tracks By Description. Hard filters: playable, explicit (category), live/karaoke titles, 26 priority artists, genre, category audio ranges, duration. Max 3 tracks per global artist. Internal pool; no need to follow.",
+        "style": "simple",
+        "color": "green",
+        "size": "small"
+      },
+      "sources": {}
+    }
+  },
+  "_positions": {
+    "comment_intro": { "x": 60, "y": 40 },
+    "tag1": { "x": 60, "y": 220 },
+    "tag2": { "x": 60, "y": 380 },
+    "tag3": { "x": 60, "y": 540 },
+    "genre_artists": { "x": 420, "y": 220 },
+    "genre_tracks_least": { "x": 420, "y": 380 },
+    "genre_tracks_most": { "x": 420, "y": 480 },
+    "genre_tracks_newest": { "x": 420, "y": 580 },
+    "genre_tracks": { "x": 420, "y": 680 },
+    "desc1": { "x": 780, "y": 220 },
+    "desc2": { "x": 780, "y": 380 },
+    "radio1": { "x": 1140, "y": 220 },
+    "radio2": { "x": 1140, "y": 380 },
+    "radio3": { "x": 1140, "y": 540 },
+    "playable": { "x": 540, "y": 660 },
+    "pool": { "x": 540, "y": 760 },
+    "explicit": { "x": 540, "y": 920 },
+    "clean_titles": { "x": 540, "y": 1080 },
+    "no_priority": { "x": 540, "y": 1240 },
+    "used_series": { "x": 900, "y": 1240 },
+    "fresh": { "x": 540, "y": 1400 },
+    "genre_filter": { "x": 540, "y": 1560 },
+    "energy": { "x": 540, "y": 1720 },
+    "valence": { "x": 540, "y": 1880 },
+    "tempo": { "x": 540, "y": 2040 },
+    "dance": { "x": 540, "y": 2200 },
+    "acoustic": { "x": 540, "y": 2360 },
+    "dur": { "x": 540, "y": 2520 },
+    "max_artist": { "x": 540, "y": 2680 },
+    "first": { "x": 540, "y": 2840 },
+    "spread": { "x": 540, "y": 3000 },
+    "comment_rules": { "x": 980, "y": 1720 }
+  }
+}
