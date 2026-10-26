@@ -9,9 +9,25 @@ This project implements a scalable "Pool & Generator" architecture:
 - **Generators (120):** Complex programs that slice these pools and sequence them using Multi-Objective Sequencing (MOS) for professional listening.
 - **Hotel/Cafe Showcase (3):** High-duration (24h) luxury programs for commercial environments.
 
-## 🛠️ Technical Specifications
+## 🛠️ Technology Stack & Systems
 
-### 📋 Rotation & Logic
+### 🏗️ Core Platform
+- **SmarterPlaylists:** The primary engine used for playlist logic, filtering, and Spotify API orchestration.
+- **Spotify API:** Used for track metadata, playlist creation, and URI management.
+
+### 💻 Automation & Tooling
+- **Python 3:** The core language used for all automation scripts.
+- **SmarterPlaylists API:** Custom integration via `sm_session.py` to handle OAuth cookies and bulk program management.
+- **JSON:** The primary data format for program configuration and templates.
+- **Git & GitHub:** Version control for program templates and automation logic.
+
+### 🧠 Sequencing Logic
+- **Multi-Objective Sequencer (MOS):** Used to achieve "Comfort Listening" by smoothing energy/valence transitions and enforcing strict artist separation.
+- **Rotation Algorithm:** A 60% Priority / 40% Global pool distribution to ensure a balance between core brand identity and variety.
+
+## 📋 Technical Specifications
+
+### Rotation & Logic
 - **Priority Ratio:** 60% Priority Pool / 40% Global Pool.
 - **Duration Caps:** 
   - Standard: 6 Hours (21,600s)
